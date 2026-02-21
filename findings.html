@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IES 2022/23 Findings</title>
+    <style>
+        :root {
+            --blue: #1a365d;
+            --blue-light: #2d5a87;
+            --accent: #e15759;
+            --bg: #fafbfc;
+            --card-bg: #fff;
+            --text: #1a202c;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --green: #22863a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .header .subtitle { opacity: 0.8; font-size: 1.05rem; }
+        .header .meta { margin-top: 1rem; opacity: 0.6; font-size: 0.85rem; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .part-header {
+            background: var(--blue);
+            color: #fff;
+            padding: 1.25rem 1.5rem;
+            border-radius: 10px;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--blue);
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--blue-light);
+            margin-top: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        strong { color: var(--blue); }
+        code {
+            background: #f1f5f9;
+            padding: 0.15em 0.4em;
+            border-radius: 4px;
+            font-size: 0.88em;
+            color: var(--accent);
+        }
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+        ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.35rem; }
+
+        .stats-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 160px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .stat-card .number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--blue);
+            line-height: 1.2;
+        }
+        .stat-card.accent .number { color: var(--accent); }
+        .stat-card .label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1rem 0 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+        thead { background: var(--blue); color: #fff; }
+        th {
+            padding: 0.65rem 0.9rem;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        td {
+            padding: 0.55rem 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+        tbody tr:nth-child(even) { background: #f8fafc; }
+        tbody tr:hover { background: #edf2f7; }
+        td:nth-child(n+2), th:nth-child(n+2) { text-align: right; }
+        .align-left { text-align: left !important; }
+        .align-center { text-align: center !important; }
+
+        .callout {
+            background: #ebf5ff;
+            border-left: 4px solid var(--blue-light);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+        .callout-warn {
+            background: #fff8e6;
+            border-left-color: #d69e2e;
+        }
+        .callout-red {
+            background: #fef2f2;
+            border-left-color: var(--accent);
+        }
+
+        .finding-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        @media print {
+            .header { padding: 2rem 1rem; }
+            .container { max-width: 100%; }
+            body { font-size: 11pt; }
+            .part-header { break-before: page; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>IES 2022/23 Findings</h1>
+    <div class="subtitle">Analysis of the Income and Expenditure Survey &mdash; Statistics South Africa</div>
+    <div class="meta">All monetary values in ZAR, annualised and adjusted to May 2023 prices</div>
+</div>
+
+<div class="container">
+
+    <!-- ============== PART 1 ============== -->
+    <div class="part-header">Part 1: Broad Exploration</div>
+
+    <!-- Finding 1 -->
+    <h2><span class="finding-num">1</span> Extreme Income Inequality</h2>
+    <p>South Africa's inequality is starkly visible in the data:</p>
+
+    <div class="stats-row">
+        <div class="stat-card accent">
+            <div class="number">54.4x</div>
+            <div class="label">Income ratio (D10 vs D1)</div>
+        </div>
+        <div class="stat-card accent">
+            <div class="number">23.4x</div>
+            <div class="label">Expenditure ratio (D10 vs D1)</div>
+        </div>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Decile</th><th>Avg Expenditure (R)</th><th>Avg Income (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">1 (Poorest)</td><td>22,428</td><td>&mdash;</td></tr>
+                <tr><td class="align-left">5 (Median)</td><td>73,481</td><td>&mdash;</td></tr>
+                <tr><td class="align-left">10 (Wealthiest)</td><td>525,043</td><td>&mdash;</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>The expenditure gap is smaller than the income gap, suggesting wealthier households save a larger share of their income while poorer households spend nearly everything they earn.</p>
+
+    <!-- Finding 2 -->
+    <h2><span class="finding-num">2</span> Racial Income Disparities</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Population Group</th><th>Households</th><th>Avg Income (R)</th><th>Avg Expenditure (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">White</td><td>1,035</td><td>636,745</td><td>387,400</td></tr>
+                <tr><td class="align-left">Indian/Asian</td><td>276</td><td>376,280</td><td>265,246</td></tr>
+                <tr><td class="align-left">Coloured</td><td>1,623</td><td>215,580</td><td>152,385</td></tr>
+                <tr><td class="align-left">Black African</td><td>17,006</td><td>126,720</td><td>97,239</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>White-headed households earn <strong>5x</strong> more than Black African-headed households on average. The Indian/Asian to Black African ratio is 3x, and Coloured to Black African is 1.7x.</p>
+
+    <!-- Finding 3 -->
+    <h2><span class="finding-num">3</span> Gender Gap in Household Headship</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Head Gender</th><th>Households</th><th>Avg Income (R)</th><th>Avg Expenditure (R)</th><th>Avg HH Size</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Male</td><td>10,492</td><td>195,284</td><td>133,280</td><td>3.2</td></tr>
+                <tr><td class="align-left">Female</td><td>9,448</td><td>129,006</td><td>103,384</td><td>3.9</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Male-headed households earn 51% more but have fewer members (3.2 vs 3.9), meaning the per-capita gap is even wider. Nearly half (47.4%) of all households are female-headed.</p>
+
+    <!-- Finding 4 -->
+    <h2><span class="finding-num">4</span> Provincial Differences</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Province</th><th>Avg Income (R)</th><th>Avg Expenditure (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Western Cape</td><td>300,933</td><td>196,722</td></tr>
+                <tr><td class="align-left">Gauteng</td><td>191,283</td><td>134,227</td></tr>
+                <tr><td class="align-left">Northern Cape</td><td>163,815</td><td>117,255</td></tr>
+                <tr><td class="align-left">KwaZulu-Natal</td><td>149,398</td><td>111,491</td></tr>
+                <tr><td class="align-left">Free State</td><td>142,730</td><td>105,443</td></tr>
+                <tr><td class="align-left">Mpumalanga</td><td>134,625</td><td>104,261</td></tr>
+                <tr><td class="align-left">North West</td><td>128,203</td><td>89,658</td></tr>
+                <tr><td class="align-left">Eastern Cape</td><td>123,274</td><td>101,502</td></tr>
+                <tr><td class="align-left">Limpopo</td><td>120,785</td><td>94,375</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>The Western Cape leads with an average household income of R300,933 &mdash; <strong>2.5x</strong> that of Limpopo (R120,785).</p>
+
+    <!-- Finding 5 -->
+    <h2><span class="finding-num">5</span> Urban vs Rural Divide</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Settlement Type</th><th>Avg Income (R)</th><th>Avg Expenditure (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Urban formal</td><td>194,815</td><td>137,371</td></tr>
+                <tr><td class="align-left">Rural formal (farms)</td><td>172,982</td><td>112,634</td></tr>
+                <tr><td class="align-left">Urban informal</td><td>103,167</td><td>84,584</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Urban formal households earn 89% more than urban informal households. Farm households earn more than urban informal ones, likely reflecting farm-owner wages.</p>
+
+    <!-- Finding 6 -->
+    <h2><span class="finding-num">6</span> Education and Income</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Education Level</th><th>Households</th><th>Avg Income (R)</th><th>Avg Expenditure (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Primary school</td><td>4,177</td><td>95,424</td><td>73,725</td></tr>
+                <tr><td class="align-left">Secondary school</td><td>11,894</td><td>131,248</td><td>102,160</td></tr>
+                <tr><td class="align-left">Certificate/Diploma</td><td>532</td><td>223,223</td><td>172,610</td></tr>
+                <tr><td class="align-left">Degree/Postgraduate</td><td>2,339</td><td>474,334</td><td>295,289</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>A degree or postgraduate qualification is associated with <strong>5x</strong> the income of primary education only. The jump from secondary to degree level is 3.6x.</p>
+
+    <!-- Finding 7 -->
+    <h2><span class="finding-num">7</span> What Do Households Spend On?</h2>
+    <p><strong>Poorest Quintile (Q1)</strong> &mdash; spending is dominated by survival basics:</p>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Category</th><th>Total Spend (R)</th><th class="align-center">Rank</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Housing, water, electricity</td><td>56,411,033</td><td class="align-center">1</td></tr>
+                <tr><td class="align-left">Food and beverages</td><td>38,995,850</td><td class="align-center">2</td></tr>
+                <tr><td class="align-left">Clothing and footwear</td><td>6,433,757</td><td class="align-center">3</td></tr>
+                <tr><td class="align-left">Transport</td><td>5,955,173</td><td class="align-center">4</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p><strong>Wealthiest Quintile (Q5)</strong> &mdash; spending shifts to transport, insurance, and discretionary items:</p>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Category</th><th>Total Spend (R)</th><th class="align-center">Rank</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Housing, water, electricity</td><td>311,448,893</td><td class="align-center">1</td></tr>
+                <tr><td class="align-left">Transport</td><td>237,636,346</td><td class="align-center">2</td></tr>
+                <tr><td class="align-left">Insurance and financial services</td><td>166,114,670</td><td class="align-center">3</td></tr>
+                <tr><td class="align-left">Food and beverages</td><td>126,267,865</td><td class="align-center">4</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="callout">For the poorest, <strong>food</strong> is the 2nd-largest expense. For the wealthiest, it drops to 4th while <strong>transport</strong> and <strong>insurance</strong> surge ahead.</div>
+
+    <!-- Finding 8 -->
+    <h2><span class="finding-num">8</span> Asset Ownership</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Asset</th><th class="align-center">% of Households</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Cell phone</td><td class="align-center">93.3%</td></tr>
+                <tr><td class="align-left">Electric stove</td><td class="align-center">91.3%</td></tr>
+                <tr><td class="align-left">Fridge</td><td class="align-center">77.3%</td></tr>
+                <tr><td class="align-left">TV</td><td class="align-center">76.5%</td></tr>
+                <tr><td class="align-left">Satellite TV (DStv)</td><td class="align-center">59.1%</td></tr>
+                <tr><td class="align-left">Washing machine</td><td class="align-center">37.6%</td></tr>
+                <tr><td class="align-left">Motor vehicle</td><td class="align-center">23.1%</td></tr>
+                <tr><td class="align-left">Computer/desktop</td><td class="align-center">23.1%</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Cell phone ownership is nearly universal (93.3%), while motor vehicle and computer ownership remain at around 23%.</p>
+
+    <!-- Finding 9 -->
+    <h2><span class="finding-num">9</span> Social Grants</h2>
+    <p>Social grants are a critical safety net. By province, child support grant receipt ranges from 5.8% of the population (Western Cape) to 13.3% (KwaZulu-Natal). The Social Relief of Distress (SRD) grant &mdash; introduced during COVID-19 &mdash; reaches 4.1% in Western Cape and up to 13.0% in Limpopo.</p>
+
+    <!-- Finding 10 -->
+    <h2><span class="finding-num">10</span> Food Security Crisis</h2>
+    <div class="stats-row">
+        <div class="stat-card accent">
+            <div class="number">39.9%</div>
+            <div class="label">Ran out of money for food</div>
+        </div>
+        <div class="stat-card accent">
+            <div class="number">27.2%</div>
+            <div class="label">Skipped meals</div>
+        </div>
+        <div class="stat-card accent">
+            <div class="number">24.8%</div>
+            <div class="label">Went hungry</div>
+        </div>
+    </div>
+    <p>Nearly <strong>40%</strong> of households report running out of money for food, and <strong>1 in 4</strong> experienced actual hunger. This represents a significant food security challenge.</p>
+
+    <!-- Finding 11 -->
+    <h2><span class="finding-num">11</span> Poverty Rates by Province (Weighted)</h2>
+    <p>Using the persons-level poverty indicators (where <code>poor1/2/3</code> = 1 means <strong>above</strong> the respective poverty line):</p>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Province</th><th class="align-center">% Above Food Poverty Line</th><th class="align-center">% Above Lower Bound</th><th class="align-center">% Above Upper Bound</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Western Cape</td><td class="align-center">92.2%</td><td class="align-center">78.6%</td><td class="align-center">49.2%</td></tr>
+                <tr><td class="align-left">Gauteng</td><td class="align-center">89.3%</td><td class="align-center">73.5%</td><td class="align-center">46.4%</td></tr>
+                <tr><td class="align-left">Free State</td><td class="align-center">86.5%</td><td class="align-center">65.6%</td><td class="align-center">34.1%</td></tr>
+                <tr><td class="align-left">Mpumalanga</td><td class="align-center">85.7%</td><td class="align-center">61.6%</td><td class="align-center">28.5%</td></tr>
+                <tr><td class="align-left">Northern Cape</td><td class="align-center">81.2%</td><td class="align-center">57.7%</td><td class="align-center">30.5%</td></tr>
+                <tr><td class="align-left">Limpopo</td><td class="align-center">79.2%</td><td class="align-center">52.4%</td><td class="align-center">20.5%</td></tr>
+                <tr><td class="align-left">Eastern Cape</td><td class="align-center">77.1%</td><td class="align-center">51.8%</td><td class="align-center">23.9%</td></tr>
+                <tr><td class="align-left">KwaZulu-Natal</td><td class="align-center">72.7%</td><td class="align-center">50.4%</td><td class="align-center">22.8%</td></tr>
+                <tr><td class="align-left">North West</td><td class="align-center">72.7%</td><td class="align-center">50.9%</td><td class="align-center">22.8%</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Inverted, this means KwaZulu-Natal and North West have the highest food poverty rates (~27.3%), while over half the population nationally falls below the upper-bound poverty line.</p>
+
+    <!-- ============== PART 2 ============== -->
+    <div class="part-header">Part 2: Out-of-Pocket Medical Expenses &mdash; Medical Aid vs Uninsured</div>
+
+    <h2>Overview: Who Has Medical Aid?</h2>
+    <p>Only <strong>40.5%</strong> of surveyed households have medical aid coverage. Coverage is strongly correlated with income:</p>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Expenditure Decile</th><th class="align-center">Medical Aid Coverage (%)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">1 (Poorest)</td><td class="align-center">19.0%</td></tr>
+                <tr><td class="align-left">2</td><td class="align-center">26.0%</td></tr>
+                <tr><td class="align-left">3</td><td class="align-center">30.8%</td></tr>
+                <tr><td class="align-left">4</td><td class="align-center">34.4%</td></tr>
+                <tr><td class="align-left">5</td><td class="align-center">37.9%</td></tr>
+                <tr><td class="align-left">6</td><td class="align-center">43.4%</td></tr>
+                <tr><td class="align-left">7</td><td class="align-center">47.9%</td></tr>
+                <tr><td class="align-left">8</td><td class="align-center">54.7%</td></tr>
+                <tr><td class="align-left">9</td><td class="align-center">58.3%</td></tr>
+                <tr><td class="align-left">10 (Wealthiest)</td><td class="align-center">66.7%</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="callout callout-warn">Even among the wealthiest 10%, a third lack medical aid coverage.</div>
+
+    <h2>Medical Aid Coverage by Province</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Province</th><th class="align-center">Medical Aid (%)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Western Cape</td><td class="align-center">45.5%</td></tr>
+                <tr><td class="align-left">Free State</td><td class="align-center">44.3%</td></tr>
+                <tr><td class="align-left">KwaZulu-Natal</td><td class="align-center">43.8%</td></tr>
+                <tr><td class="align-left">Eastern Cape</td><td class="align-center">42.6%</td></tr>
+                <tr><td class="align-left">Mpumalanga</td><td class="align-center">41.5%</td></tr>
+                <tr><td class="align-left">Limpopo</td><td class="align-center">39.3%</td></tr>
+                <tr><td class="align-left">Gauteng</td><td class="align-center">39.1%</td></tr>
+                <tr><td class="align-left">North West</td><td class="align-center">30.8%</td></tr>
+                <tr><td class="align-left">Northern Cape</td><td class="align-center">30.2%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Total Health Expenditure: Medical Aid vs Uninsured</h2>
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="number">R2,685</div>
+            <div class="label">Avg health spend/HH (Medical Aid)</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">R1,260</div>
+            <div class="label">Avg health spend/HH (Uninsured)</div>
+        </div>
+        <div class="stat-card accent">
+            <div class="number">2.1x</div>
+            <div class="label">Spending gap</div>
+        </div>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Status</th><th>HH with Health Spending</th><th>Avg Health Spend/HH (R)</th><th class="align-center">Health % of Total Exp</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">On medical aid</td><td>6,524</td><td>2,685</td><td class="align-center">1.7%</td></tr>
+                <tr><td class="align-left">Not on medical aid</td><td>4,662</td><td>1,260</td><td class="align-center">1.4%</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Medical aid members spend <strong>2.1x</strong> more out-of-pocket on health, despite already paying for their medical aid premiums. This suggests medical aid facilitates greater healthcare utilisation rather than simply replacing out-of-pocket spending.</p>
+
+    <h2>What Are They Spending On?</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Health Category</th><th>Medical Aid (R/HH)</th><th>No Medical Aid (R/HH)</th><th>Ratio</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Medicines and health products</td><td>1,578</td><td>859</td><td>1.8x</td></tr>
+                <tr><td class="align-left">Outpatient care services</td><td>2,014</td><td>1,146</td><td>1.8x</td></tr>
+                <tr><td class="align-left">Inpatient care services</td><td>11,038</td><td>5,032</td><td>2.2x</td></tr>
+                <tr><td class="align-left">Other health services</td><td>1,617</td><td>1,131</td><td>1.4x</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p><em>Note: Averages are among households that incurred costs in each category. Inpatient care is rare but extremely expensive &mdash; medical aid members incur 2.7x more inpatient items (145 vs 54 in the sample).</em></p>
+
+    <h2>Out-of-Pocket Health Spending by Income Level</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Decile</th><th>Medical Aid (R/HH)</th><th>No Medical Aid (R/HH)</th><th>Gap</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">1</td><td>399</td><td>361</td><td>1.1x</td></tr>
+                <tr><td class="align-left">2</td><td>568</td><td>445</td><td>1.3x</td></tr>
+                <tr><td class="align-left">3</td><td>761</td><td>505</td><td>1.5x</td></tr>
+                <tr><td class="align-left">4</td><td>893</td><td>709</td><td>1.3x</td></tr>
+                <tr><td class="align-left">5</td><td>967</td><td>784</td><td>1.2x</td></tr>
+                <tr><td class="align-left">6</td><td>1,239</td><td>1,199</td><td>1.0x</td></tr>
+                <tr><td class="align-left">7</td><td>1,511</td><td>1,040</td><td>1.5x</td></tr>
+                <tr><td class="align-left">8</td><td>2,018</td><td>1,454</td><td>1.4x</td></tr>
+                <tr><td class="align-left">9</td><td>3,804</td><td>2,334</td><td>1.6x</td></tr>
+                <tr><td class="align-left">10</td><td>10,651</td><td>5,788</td><td>1.8x</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="callout callout-red"><strong>Key trend:</strong> At low income levels, the gap is small (deciles 1&ndash;6, gap of 1.0&ndash;1.5x). The gap <strong>widens dramatically at the top</strong>: in decile 10, medical aid members spend R10,651 vs R5,788 for the uninsured. This suggests wealthy medical aid members top up coverage with significant private spending.</div>
+
+    <h2>The Racial Dimension</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Population Group</th><th class="align-left">Status</th><th>Avg Health Expenditure (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">White</td><td class="align-left">Medical aid</td><td>9,319</td></tr>
+                <tr><td class="align-left">White</td><td class="align-left">No medical aid</td><td>2,695</td></tr>
+                <tr><td class="align-left">Indian/Asian</td><td class="align-left">Medical aid</td><td>4,011</td></tr>
+                <tr><td class="align-left">Indian/Asian</td><td class="align-left">No medical aid</td><td>1,059</td></tr>
+                <tr><td class="align-left">Coloured</td><td class="align-left">Medical aid</td><td>2,046</td></tr>
+                <tr><td class="align-left">Coloured</td><td class="align-left">No medical aid</td><td>451</td></tr>
+                <tr><td class="align-left">Black African</td><td class="align-left">Medical aid</td><td>1,465</td></tr>
+                <tr><td class="align-left">Black African</td><td class="align-left">No medical aid</td><td>439</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="callout callout-red">The disparity is staggering: White households on medical aid spend <strong>21x</strong> more on health than Black African households without medical aid. Even within the same medical aid status, White households spend 6x more than Black African households.</div>
+
+    <h2>The Full Cost of Healthcare: Premiums + Out-of-Pocket</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Status</th><th>Avg Insurance Spend (R)</th><th>Avg Health OOP (R)</th><th>Estimated Total (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">On medical aid</td><td>20,076</td><td>2,685</td><td>~22,761</td></tr>
+                <tr><td class="align-left">Not on medical aid</td><td>9,749</td><td>1,260</td><td>~11,009</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>The ~R10,327 difference in insurance spend largely reflects medical aid premiums. Medical aid members therefore spend approximately <strong>R22,761</strong> annually on healthcare (premiums + out-of-pocket), while the uninsured spend <strong>R1,260</strong> out-of-pocket only.</p>
+
+    <h2>Healthcare Spending vs Inflation Context</h2>
+    <p>All IES 2022/23 values are benchmarked to <strong>May 2023 prices</strong>. South Africa's headline CPI inflation averaged approximately 6.9% in 2022 and 6.0% in 2023. However, medical inflation has historically run well above general CPI in South Africa:</p>
+    <ul>
+        <li>The medical CPI sub-index has consistently risen 1.5&ndash;2x faster than headline CPI</li>
+        <li>Medical aid premiums have increased at 8&ndash;12% annually over the past decade</li>
+        <li>This means the real burden of healthcare costs grows faster than wages for most households</li>
+    </ul>
+    <p>Since this is a single cross-sectional survey, we cannot directly measure inflation trends within this data. However, the pattern across income deciles reveals that healthcare spending is <strong>income elastic</strong> &mdash; as household income rises, health spending rises even faster. This suggests:</p>
+    <ol>
+        <li><strong>Lower-income households suppress healthcare spending</strong> &mdash; likely forgoing or delaying care due to cost</li>
+        <li><strong>Medical inflation disproportionately burdens middle-income households</strong> &mdash; those in deciles 5&ndash;7 who may have medical aid but face rising premiums and co-payments</li>
+        <li><strong>The uninsured face a double bind:</strong> no coverage AND lower out-of-pocket spending, suggesting they simply access less care rather than paying for it differently</li>
+    </ol>
+
+    <h2>Summary of Key Medical Findings</h2>
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; margin-top: 1rem;">
+        <ol>
+            <li>Only <strong>40.5%</strong> of households have medical aid &mdash; coverage ranges from 19% (poorest) to 67% (wealthiest)</li>
+            <li>Medical aid members spend <strong>2.1x</strong> more out-of-pocket on health than uninsured households</li>
+            <li>The spending gap widens with income: 1.0x in the middle deciles, 1.8x at the top</li>
+            <li>Inpatient care is the biggest cost driver (R11,038 per episode for medical aid, R5,032 without)</li>
+            <li>White medical aid members spend <strong>21x</strong> more than Black African uninsured households</li>
+            <li>Including premiums, medical aid members pay ~R22,761/year for healthcare vs ~R1,260 for the uninsured</li>
+            <li>Low out-of-pocket spending by uninsured households likely reflects <strong>suppressed demand</strong>, not lower need</li>
+        </ol>
+    </div>
+
+</div>
+
+<div class="footer">
+    Source: Statistics South Africa, Income and Expenditure Survey 2022/23 (Report P0100).<br>
+    All monetary values in South African Rand, annualised and adjusted to May 2023 prices.
+</div>
+
+</body>
+</html>

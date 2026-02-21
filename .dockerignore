@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+.git/
+*.db
+*.db-shm
+*.db-wal
+csv_temp/
+report.*
+findings.*
+data.*
+study.md
+webapp/__pycache__/
+webapp/.venv/
+webapp/analysis.py
+webapp/analysis_results.json
+webapp/README.md

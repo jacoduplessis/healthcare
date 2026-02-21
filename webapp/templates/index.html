@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IES 2022/23 Data Explorer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+        .sql-editor { font-family: "SF Mono", "Menlo", "Monaco", monospace; font-size: 0.875rem; min-height: 120px; }
+        .results-table { font-size: 0.85rem; }
+        .results-table th { position: sticky; top: 0; background: var(--bs-body-bg); z-index: 1; }
+        .table-wrapper { max-height: 500px; overflow-y: auto; }
+        .example-card { cursor: pointer; transition: border-color 0.2s; }
+        .example-card:hover { border-color: #0d6efd !important; }
+        .vega-embed { width: 100%; }
+        .vega-embed .vega-actions { display: none; }
+        #chart-container { min-height: 100px; }
+        .badge-table { font-size: 0.7rem; }
+        .schema-col { font-size: 0.8rem; }
+        .hero { background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%); }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <div class="hero text-white py-4">
+        <div class="container">
+            <h1 class="h3 mb-1">IES 2022/23 Data Explorer</h1>
+            <p class="mb-0 opacity-75">South Africa Income &amp; Expenditure Survey &mdash; Statistics South Africa</p>
+        </div>
+    </div>
+
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+            <!-- Left: Schema browser -->
+            <div class="col-lg-3 col-xl-2">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white fw-semibold">Database Schema</div>
+                    <div class="card-body p-0" id="schema-browser" style="max-height: 70vh; overflow-y: auto;">
+                        <div class="text-center p-3 text-muted">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center: Query editor + results -->
+            <div class="col-lg-9 col-xl-7">
+                <!-- Query editor -->
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">SQL Query</span>
+                        <div>
+                            <button class="btn btn-sm btn-outline-secondary me-1" id="btn-clear">Clear</button>
+                            <button class="btn btn-sm btn-primary" id="btn-run">
+                                Run Query <span class="badge bg-light text-primary ms-1">Ctrl+Enter</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <textarea class="form-control sql-editor border-0 rounded-0" id="sql-input"
+                            placeholder="Enter a SELECT query... e.g. SELECT * FROM households LIMIT 10">SELECT p.name AS province,
+       ROUND(AVG(CAST(h.income AS REAL)), 0) AS avg_income,
+       ROUND(AVG(CAST(h.expenditure AS REAL)), 0) AS avg_expenditure
+FROM households h
+JOIN geography g ON h.uqno = g.uqno
+JOIN province_lookup p ON g.province = p.code
+GROUP BY g.province
+ORDER BY avg_income DESC</textarea>
+                    </div>
+                </div>
+
+                <!-- Error display -->
+                <div class="alert alert-danger d-none mb-3" id="error-alert"></div>
+
+                <!-- Chart -->
+                <div class="card border-0 shadow-sm mb-4 d-none" id="chart-card">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">Chart</span>
+                        <select class="form-select form-select-sm w-auto" id="chart-type">
+                            <option value="bar">Bar Chart</option>
+                            <option value="line">Line Chart</option>
+                            <option value="point">Scatter Plot</option>
+                            <option value="area">Area Chart</option>
+                            <option value="arc">Pie Chart</option>
+                        </select>
+                    </div>
+                    <div class="card-body" id="chart-container"></div>
+                </div>
+
+                <!-- Results table -->
+                <div class="card border-0 shadow-sm d-none" id="results-card">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">Results</span>
+                        <span class="text-muted" id="results-count"></span>
+                    </div>
+                    <div class="card-body p-0 table-wrapper">
+                        <table class="table table-sm table-striped table-hover results-table mb-0" id="results-table">
+                            <thead id="results-head"></thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Examples -->
+            <div class="col-xl-3 d-none d-xl-block">
+                <h6 class="text-muted text-uppercase small mb-3">Example Queries &amp; Charts</h6>
+                <div id="examples-list">
+                    {% for ex in examples %}
+                    <div class="card example-card border mb-2" data-example-id="{{ ex.id }}">
+                        <div class="card-body py-2 px-3">
+                            <h6 class="card-title mb-1" style="font-size: 0.85rem;">{{ ex.title }}</h6>
+                            <p class="card-text text-muted mb-0" style="font-size: 0.75rem;">{{ ex.description }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Example queries section for smaller screens -->
+        <div class="row mt-4 d-xl-none">
+            <div class="col-12">
+                <h5 class="mb-3">Example Queries &amp; Charts</h5>
+                <div class="row g-3">
+                    {% for ex in examples %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card example-card border h-100" data-example-id="{{ ex.id }}">
+                            <div class="card-body py-2 px-3">
+                                <h6 class="card-title mb-1">{{ ex.title }}</h6>
+                                <p class="card-text text-muted mb-0" style="font-size: 0.85rem;">{{ ex.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid py-3 border-top mt-4">
+        <p class="text-center text-muted small mb-0">
+            Data source: Statistics South Africa, Income and Expenditure Survey 2022/23 (Report P0100).
+            All monetary values in ZAR, annualised and adjusted to May 2023 prices.
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Store example data from server
+        const EXAMPLES = {{ examples | tojson }};
+
+        // DOM elements
+        const sqlInput = document.getElementById('sql-input');
+        const btnRun = document.getElementById('btn-run');
+        const btnClear = document.getElementById('btn-clear');
+        const errorAlert = document.getElementById('error-alert');
+        const chartCard = document.getElementById('chart-card');
+        const chartContainer = document.getElementById('chart-container');
+        const chartType = document.getElementById('chart-type');
+        const resultsCard = document.getElementById('results-card');
+        const resultsCount = document.getElementById('results-count');
+        const resultsHead = document.getElementById('results-head');
+        const resultsBody = document.getElementById('results-body');
+
+        let lastData = null;
+        let activeChart = null;
+
+        // Load schema
+        async function loadSchema() {
+            const res = await fetch('/api/tables');
+            const tables = await res.json();
+            const browser = document.getElementById('schema-browser');
+            let html = '<div class="accordion accordion-flush" id="schemaAccordion">';
+            for (const [table, cols] of Object.entries(tables)) {
+                const id = `schema-${table}`;
+                html += `
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed py-2 px-3" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#${id}" style="font-size:0.85rem;">
+                            <strong>${table}</strong>
+                            <span class="badge bg-secondary badge-table ms-2">${cols.length}</span>
+                        </button>
+                    </h2>
+                    <div id="${id}" class="accordion-collapse collapse" data-bs-parent="#schemaAccordion">
+                        <div class="accordion-body p-0">
+                            <ul class="list-group list-group-flush schema-col">
+                                ${cols.map(c => `<li class="list-group-item py-1 px-3">
+                                    <code class="text-primary">${c.name}</code>
+                                    <span class="text-muted float-end">${c.type}</span>
+                                </li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            html += '</div>';
+            browser.innerHTML = html;
+        }
+
+        // Run query
+        async function runQuery(sql, chartSpec) {
+            errorAlert.classList.add('d-none');
+            chartCard.classList.add('d-none');
+            resultsCard.classList.add('d-none');
+            btnRun.disabled = true;
+            btnRun.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Running...';
+
+            try {
+                const res = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sql }),
+                });
+                const data = await res.json();
+
+                if (data.error) {
+                    errorAlert.textContent = data.error;
+                    errorAlert.classList.remove('d-none');
+                    return;
+                }
+
+                lastData = data;
+                renderResults(data);
+
+                if (chartSpec) {
+                    activeChart = chartSpec;
+                    renderVegaChart(data, chartSpec);
+                } else if (data.columns.length >= 2) {
+                    activeChart = null;
+                    renderAutoChart(data);
+                }
+            } catch (e) {
+                errorAlert.textContent = 'Network error: ' + e.message;
+                errorAlert.classList.remove('d-none');
+            } finally {
+                btnRun.disabled = false;
+                btnRun.innerHTML = 'Run Query <span class="badge bg-light text-primary ms-1">Ctrl+Enter</span>';
+            }
+        }
+
+        // Render results table
+        function renderResults(data) {
+            resultsCard.classList.remove('d-none');
+            resultsCount.textContent = `${data.count.toLocaleString()} row${data.count !== 1 ? 's' : ''}`;
+
+            resultsHead.innerHTML = '<tr>' + data.columns.map(c => `<th>${c}</th>`).join('') + '</tr>';
+            resultsBody.innerHTML = data.rows.map(row =>
+                '<tr>' + data.columns.map(c => {
+                    const val = row[c];
+                    if (typeof val === 'number') {
+                        return `<td class="text-end">${val.toLocaleString()}</td>`;
+                    }
+                    return `<td>${val ?? ''}</td>`;
+                }).join('') + '</tr>'
+            ).join('');
+        }
+
+        // Render Vega-Lite chart from example spec
+        function renderVegaChart(data, chartSpec) {
+            chartCard.classList.remove('d-none');
+            const spec = {
+                $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+                width: 'container',
+                height: 350,
+                data: { values: data.rows },
+                ...chartSpec,
+            };
+            vegaEmbed('#chart-container', spec, { actions: false, renderer: 'svg' });
+        }
+
+        // Auto-generate chart from query results
+        function renderAutoChart(data) {
+            if (data.rows.length === 0 || data.columns.length < 2) return;
+
+            chartCard.classList.remove('d-none');
+            const cols = data.columns;
+            const mark = chartType.value;
+
+            // Find first string and first numeric column
+            let nominalCol = null, quantCol = null;
+            for (const c of cols) {
+                const val = data.rows[0][c];
+                if (typeof val === 'string' && !nominalCol) nominalCol = c;
+                if (typeof val === 'number' && !quantCol) quantCol = c;
+            }
+
+            if (!quantCol) {
+                chartContainer.innerHTML = '<p class="text-muted text-center">No numeric columns to chart.</p>';
+                return;
+            }
+            if (!nominalCol) nominalCol = cols[0];
+
+            let spec;
+            if (mark === 'arc') {
+                spec = {
+                    $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+                    width: 'container',
+                    height: 350,
+                    data: { values: data.rows },
+                    mark: { type: 'arc', innerRadius: 50 },
+                    encoding: {
+                        theta: { field: quantCol, type: 'quantitative' },
+                        color: { field: nominalCol, type: 'nominal' },
+                        tooltip: cols.map(c => ({ field: c, type: typeof data.rows[0][c] === 'number' ? 'quantitative' : 'nominal' })),
+                    },
+                };
+            } else {
+                const isHorizontal = mark === 'bar' && data.rows.length > 5;
+                spec = {
+                    $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+                    width: 'container',
+                    height: 350,
+                    data: { values: data.rows },
+                    mark: { type: mark, point: mark === 'line' },
+                    encoding: {
+                        [isHorizontal ? 'y' : 'x']: {
+                            field: nominalCol,
+                            type: typeof data.rows[0][nominalCol] === 'number' ? 'ordinal' : 'nominal',
+                            sort: isHorizontal ? '-x' : null,
+                        },
+                        [isHorizontal ? 'x' : 'y']: {
+                            field: quantCol,
+                            type: 'quantitative',
+                        },
+                        tooltip: cols.map(c => ({
+                            field: c,
+                            type: typeof data.rows[0][c] === 'number' ? 'quantitative' : 'nominal',
+                        })),
+                    },
+                };
+            }
+            vegaEmbed('#chart-container', spec, { actions: false, renderer: 'svg' });
+        }
+
+        // Event listeners
+        btnRun.addEventListener('click', () => runQuery(sqlInput.value.trim()));
+        btnClear.addEventListener('click', () => {
+            sqlInput.value = '';
+            errorAlert.classList.add('d-none');
+            chartCard.classList.add('d-none');
+            resultsCard.classList.add('d-none');
+            sqlInput.focus();
+        });
+
+        sqlInput.addEventListener('keydown', e => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                e.preventDefault();
+                runQuery(sqlInput.value.trim());
+            }
+        });
+
+        chartType.addEventListener('change', () => {
+            if (lastData && !activeChart) renderAutoChart(lastData);
+        });
+
+        // Example card clicks
+        document.querySelectorAll('.example-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.exampleId;
+                const ex = EXAMPLES.find(e => e.id === id);
+                if (ex) {
+                    sqlInput.value = ex.sql;
+                    runQuery(ex.sql, ex.chart);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Init
+        loadSchema();
+    </script>
+</body>
+</html>

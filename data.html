@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IES 2022/23 Data Overview</title>
+    <style>
+        :root {
+            --blue: #1a365d;
+            --blue-light: #2d5a87;
+            --accent: #e15759;
+            --bg: #fafbfc;
+            --card-bg: #fff;
+            --text: #1a202c;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --green: #22863a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .header .subtitle { opacity: 0.8; font-size: 1.05rem; }
+        .header .meta { margin-top: 1rem; opacity: 0.6; font-size: 0.85rem; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--blue);
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--blue-light);
+            margin-top: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        strong { color: var(--blue); }
+        code {
+            background: #f1f5f9;
+            padding: 0.15em 0.4em;
+            border-radius: 4px;
+            font-size: 0.88em;
+            color: var(--accent);
+        }
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+        ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.35rem; }
+
+        /* Stat callout boxes */
+        .stats-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 180px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .stat-card .number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--blue);
+            line-height: 1.2;
+        }
+        .stat-card .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Tables */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1rem 0 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+        thead { background: var(--blue); color: #fff; }
+        th {
+            padding: 0.65rem 0.9rem;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        td {
+            padding: 0.55rem 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+        tbody tr:nth-child(even) { background: #f8fafc; }
+        tbody tr:hover { background: #edf2f7; }
+        td:nth-child(n+2), th:nth-child(n+2) { text-align: right; }
+        .align-left { text-align: left !important; }
+
+        .callout {
+            background: #ebf5ff;
+            border-left: 4px solid var(--blue-light);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+        .callout-warn {
+            background: #fff8e6;
+            border-left-color: #d69e2e;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        @media print {
+            .header { padding: 2rem 1rem; }
+            .container { max-width: 100%; }
+            body { font-size: 11pt; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>IES 2022/23 Data Overview</h1>
+    <div class="subtitle">Income and Expenditure Survey &mdash; Statistics South Africa</div>
+    <div class="meta">Report P0100 &bull; Survey period: November 2022 &ndash; November 2023</div>
+</div>
+
+<div class="container">
+
+    <h2>About the Dataset</h2>
+    <p>The <strong>Income and Expenditure Survey (IES) 2022/23</strong> is a household-based sample survey conducted by Statistics South Africa (Stats SA) between November 2022 and November 2023. It collects information on acquisitions, consumption, spending, and income earned by households in South Africa.</p>
+
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="number">19,939</div>
+            <div class="label">Households Surveyed</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">21.3M</div>
+            <div class="label">Estimated Households</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">61.2M</div>
+            <div class="label">Estimated Population</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>Database Structure</h2>
+    <p>The SQLite database <code>ies2023.db</code> contains <strong>5 data tables</strong> and <strong>3 lookup tables</strong>:</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Table</th><th>Rows</th><th>Columns</th><th class="align-left">Description</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left"><code>geography</code></td><td>19,940</td><td>5</td><td class="align-left">Geographic location of each household (province, metro area, settlement type)</td></tr>
+                <tr><td class="align-left"><code>households</code></td><td>19,940</td><td>345</td><td class="align-left">Household characteristics: dwelling, services, assets, crime, food security, finance, health, demographics of head, and aggregate income/expenditure</td></tr>
+                <tr><td class="align-left"><code>persons</code></td><td>70,339</td><td>216</td><td class="align-left">Individual-level data: demographics, education, employment, health, migration, social grants, disability</td></tr>
+                <tr><td class="align-left"><code>person_income</code></td><td>48,038</td><td>5</td><td class="align-left">Personal income by COICOP income category (annualised, adjusted values)</td></tr>
+                <tr><td class="align-left"><code>total</code></td><td>1,128,279</td><td>10</td><td class="align-left">All expenditure and income line items classified by COICOP code (annualised, adjusted to May 2023 prices)</td></tr>
+                <tr><td class="align-left"><code>coicop_lookup</code></td><td>121</td><td>3</td><td class="align-left">Maps COICOP division/group codes to human-readable labels</td></tr>
+                <tr><td class="align-left"><code>province_lookup</code></td><td>9</td><td>2</td><td class="align-left">Maps province codes (1-9) to province names</td></tr>
+                <tr><td class="align-left"><code>settlement_lookup</code></td><td>4</td><td>2</td><td class="align-left">Maps settlement type codes to descriptions</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Key Relationships</h3>
+    <ul>
+        <li><code>uqno</code> (unique household number) links <code>geography</code>, <code>households</code>, <code>persons</code>, and <code>total</code></li>
+        <li><code>person_id</code> links <code>persons</code> to <code>person_income</code></li>
+        <li><code>division</code> and <code>group</code> in <code>total</code> link to <code>coicop_lookup</code></li>
+        <li><code>province</code> in <code>geography</code> links to <code>province_lookup</code></li>
+    </ul>
+
+    <hr>
+
+    <h2>Geographic Distribution</h2>
+
+    <h3>Households by Province (sample)</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Province</th><th>Households</th><th>% of Sample</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Gauteng</td><td>4,688</td><td>23.5%</td></tr>
+                <tr><td class="align-left">KwaZulu-Natal</td><td>3,216</td><td>16.1%</td></tr>
+                <tr><td class="align-left">Eastern Cape</td><td>2,752</td><td>13.8%</td></tr>
+                <tr><td class="align-left">Limpopo</td><td>2,237</td><td>11.2%</td></tr>
+                <tr><td class="align-left">Western Cape</td><td>1,830</td><td>9.2%</td></tr>
+                <tr><td class="align-left">Mpumalanga</td><td>1,580</td><td>7.9%</td></tr>
+                <tr><td class="align-left">Free State</td><td>1,369</td><td>6.9%</td></tr>
+                <tr><td class="align-left">North West</td><td>1,382</td><td>6.9%</td></tr>
+                <tr><td class="align-left">Northern Cape</td><td>886</td><td>4.4%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Households by Settlement Type</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Settlement Type</th><th>Households</th><th>%</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Urban formal</td><td>12,661</td><td>63.5%</td></tr>
+                <tr><td class="align-left">Urban informal</td><td>6,559</td><td>32.9%</td></tr>
+                <tr><td class="align-left">Rural formal (farms)</td><td>720</td><td>3.6%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <h2>Population Demographics</h2>
+
+    <h3>Age Distribution (70,339 persons)</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Age Group</th><th>Count</th><th>%</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">0&ndash;17 (Children)</td><td>25,236</td><td>35.9%</td></tr>
+                <tr><td class="align-left">18&ndash;34 (Young adults)</td><td>18,689</td><td>26.6%</td></tr>
+                <tr><td class="align-left">35&ndash;49 (Middle age)</td><td>12,916</td><td>18.4%</td></tr>
+                <tr><td class="align-left">50&ndash;64 (Older adults)</td><td>8,578</td><td>12.2%</td></tr>
+                <tr><td class="align-left">65+ (Elderly)</td><td>4,920</td><td>7.0%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Population Group</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Group</th><th>Count</th><th>%</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Black African</td><td>60,629</td><td>86.2%</td></tr>
+                <tr><td class="align-left">Coloured</td><td>6,300</td><td>9.0%</td></tr>
+                <tr><td class="align-left">White</td><td>2,589</td><td>3.7%</td></tr>
+                <tr><td class="align-left">Indian/Asian</td><td>821</td><td>1.2%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Household Size</h3>
+    <ul>
+        <li><strong>Average:</strong> 3.5 persons per household</li>
+        <li><strong>Range:</strong> 1 to 30 persons</li>
+        <li><strong>Most common:</strong> 1 person (23.3%), 2 persons (17.9%), 3 persons (15.7%)</li>
+        <li>23.3% of households are single-person households</li>
+    </ul>
+
+    <hr>
+
+    <h2>Income and Expenditure Summary</h2>
+    <div class="callout">All monetary values are annualised and adjusted to <strong>May 2023 prices</strong> (in South African Rand).</div>
+
+    <h3>Household-Level Totals</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Metric</th><th>Min</th><th>Average</th><th>Max</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Annual Expenditure (R)</td><td>2,727</td><td>119,114</td><td>2,429,938</td></tr>
+                <tr><td class="align-left">Annual Income (R)</td><td>150</td><td>163,880</td><td>6,854,725</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Average Income &amp; Expenditure by Province</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Province</th><th>Avg Income (R)</th><th>Avg Expenditure (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Western Cape</td><td>300,933</td><td>196,722</td></tr>
+                <tr><td class="align-left">Gauteng</td><td>191,283</td><td>134,227</td></tr>
+                <tr><td class="align-left">Northern Cape</td><td>163,815</td><td>117,255</td></tr>
+                <tr><td class="align-left">KwaZulu-Natal</td><td>149,398</td><td>111,491</td></tr>
+                <tr><td class="align-left">Free State</td><td>142,730</td><td>105,443</td></tr>
+                <tr><td class="align-left">Mpumalanga</td><td>134,625</td><td>104,261</td></tr>
+                <tr><td class="align-left">North West</td><td>128,203</td><td>89,658</td></tr>
+                <tr><td class="align-left">Eastern Cape</td><td>123,274</td><td>101,502</td></tr>
+                <tr><td class="align-left">Limpopo</td><td>120,785</td><td>94,375</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Expenditure Decile Distribution</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Decile</th><th>Households</th><th>Min (R)</th><th>Avg (R)</th><th>Max (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">1 (Poorest)</td><td>2,044</td><td>2,727</td><td>22,428</td><td>30,820</td></tr>
+                <tr><td class="align-left">2</td><td>2,126</td><td>30,821</td><td>36,958</td><td>42,652</td></tr>
+                <tr><td class="align-left">3</td><td>2,158</td><td>42,653</td><td>48,111</td><td>53,726</td></tr>
+                <tr><td class="align-left">4</td><td>2,135</td><td>53,726</td><td>59,910</td><td>66,240</td></tr>
+                <tr><td class="align-left">5</td><td>2,181</td><td>66,243</td><td>73,481</td><td>81,551</td></tr>
+                <tr><td class="align-left">6</td><td>2,152</td><td>81,558</td><td>90,738</td><td>101,100</td></tr>
+                <tr><td class="align-left">7</td><td>2,148</td><td>101,106</td><td>115,567</td><td>133,192</td></tr>
+                <tr><td class="align-left">8</td><td>1,948</td><td>133,205</td><td>158,208</td><td>188,478</td></tr>
+                <tr><td class="align-left">9</td><td>1,705</td><td>188,491</td><td>235,723</td><td>306,043</td></tr>
+                <tr><td class="align-left">10 (Wealthiest)</td><td>1,343</td><td>306,318</td><td>525,043</td><td>2,429,938</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="callout callout-warn">The wealthiest 10% of households spend on average <strong>23x</strong> more than the poorest 10%.</div>
+
+    <hr>
+
+    <h2>What Households Spend On (COICOP Expenditure Divisions)</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Category</th><th>Items in Data</th><th>Total Spend (R)</th><th>Avg per Item (R)</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Housing, water, electricity, gas</td><td>72,940</td><td>780,503,766</td><td>10,701</td></tr>
+                <tr><td class="align-left">Food and non-alcoholic beverages</td><td>419,328</td><td>465,781,643</td><td>1,111</td></tr>
+                <tr><td class="align-left">Transport</td><td>52,569</td><td>347,283,715</td><td>6,606</td></tr>
+                <tr><td class="align-left">Insurance and financial services</td><td>38,855</td><td>244,216,385</td><td>6,285</td></tr>
+                <tr><td class="align-left">Clothing and footwear</td><td>81,608</td><td>135,825,710</td><td>1,664</td></tr>
+                <tr><td class="align-left">Information and communication</td><td>51,653</td><td>110,105,998</td><td>2,132</td></tr>
+                <tr><td class="align-left">Furnishings and household equipment</td><td>86,103</td><td>98,150,250</td><td>1,140</td></tr>
+                <tr><td class="align-left">Personal care and miscellaneous</td><td>65,115</td><td>76,808,715</td><td>1,180</td></tr>
+                <tr><td class="align-left">Restaurants and accommodation</td><td>27,394</td><td>59,391,002</td><td>2,168</td></tr>
+                <tr><td class="align-left">Education</td><td>4,832</td><td>52,052,279</td><td>10,772</td></tr>
+                <tr><td class="align-left">Alcohol, tobacco and narcotics</td><td>23,114</td><td>36,434,069</td><td>1,576</td></tr>
+                <tr><td class="align-left">Recreation, sport and culture</td><td>21,866</td><td>29,955,777</td><td>1,370</td></tr>
+                <tr><td class="align-left">Health</td><td>21,982</td><td>23,403,778</td><td>1,065</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p><strong>Housing</strong> is the single largest spending category, followed by <strong>food</strong> (which has the most individual line items).</p>
+
+    <hr>
+
+    <h2>Health and Medical Aid Coverage</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Medical Aid Status</th><th>Households</th><th>%</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Yes (on medical aid)</td><td>8,085</td><td>40.5%</td></tr>
+                <tr><td class="align-left">No (not on medical aid)</td><td>11,345</td><td>56.9%</td></tr>
+                <tr><td class="align-left">Don't know</td><td>19</td><td>0.1%</td></tr>
+                <tr><td class="align-left">Unspecified</td><td>491</td><td>2.5%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <h2>Food Security Indicators</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Indicator</th><th>Households</th><th>%</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Ran out of money for food</td><td>7,962</td><td>39.9%</td></tr>
+                <tr><td class="align-left">Skipped meals</td><td>5,432</td><td>27.2%</td></tr>
+                <tr><td class="align-left">Went hungry</td><td>4,947</td><td>24.8%</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="callout callout-warn">Nearly <strong>40%</strong> of surveyed households reported running out of money to buy food, and about <strong>1 in 4</strong> households experienced hunger.</div>
+
+    <hr>
+
+    <h2>Key Columns in the Households Table (345 columns)</h2>
+    <p>The households table is extensive. Key column groups include:</p>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Prefix</th><th class="align-left">Domain</th><th class="align-left">Examples</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left"><code>IRD_</code></td><td class="align-left">Dwelling characteristics</td><td class="align-left">Walls, roof, floor material and condition</td></tr>
+                <tr><td class="align-left"><code>WAT_</code></td><td class="align-left">Water supply</td><td class="align-left">Drinking water source, distance, payment</td></tr>
+                <tr><td class="align-left"><code>SAN_</code></td><td class="align-left">Sanitation</td><td class="align-left">Toilet type, sewerage, location</td></tr>
+                <tr><td class="align-left"><code>ENG_</code></td><td class="align-left">Energy</td><td class="align-left">Electricity access, cooking/heating fuel</td></tr>
+                <tr><td class="align-left"><code>SWR_</code></td><td class="align-left">Solid waste removal</td><td class="align-left">Refuse collection, separation, recycling</td></tr>
+                <tr><td class="align-left"><code>ATS_</code></td><td class="align-left">Access to services</td><td class="align-left">Distance to clinic, hospital</td></tr>
+                <tr><td class="align-left"><code>HOU_</code></td><td class="align-left">Housing</td><td class="align-left">Ownership, rooms, value, repairs</td></tr>
+                <tr><td class="align-left"><code>HAS_</code></td><td class="align-left">Household assets</td><td class="align-left">Radio, TV, fridge, vehicle, cell phone, etc.</td></tr>
+                <tr><td class="align-left"><code>CRIME_</code></td><td class="align-left">Crime experience</td><td class="align-left">Assault, robbery, burglary, fraud, etc.</td></tr>
+                <tr><td class="align-left"><code>TRA_</code></td><td class="align-left">Transport</td><td class="align-left">Vehicle acquisition, driving licence</td></tr>
+                <tr><td class="align-left"><code>EDU_</code></td><td class="align-left">Education expenditure</td><td class="align-left">Public/private attendance at various levels</td></tr>
+                <tr><td class="align-left"><code>SUB_</code></td><td class="align-left">Subsistence farming</td><td class="align-left">Land ownership, crops, livestock</td></tr>
+                <tr><td class="align-left"><code>LCF_</code></td><td class="align-left">Living conditions &amp; food security</td><td class="align-left">Food security scale indicators</td></tr>
+                <tr><td class="align-left"><code>FAB_</code></td><td class="align-left">Finance and banking</td><td class="align-left">Mortgages, loans, credit cards, stokvels</td></tr>
+                <tr><td class="align-left"><code>EOH_</code></td><td class="align-left">Expenditure on health</td><td class="align-left">Medical aid, prescriptions</td></tr>
+                <tr><td class="align-left"><code>HEAD_</code></td><td class="align-left">Head of household</td><td class="align-left">Sex, age, population group, education, marital status</td></tr>
+                <tr><td class="align-left"><code>EXPENDITURE*</code></td><td class="align-left">Aggregate expenditure</td><td class="align-left">Total, per capita, decile, quintile</td></tr>
+                <tr><td class="align-left"><code>INCOME*</code></td><td class="align-left">Aggregate income</td><td class="align-left">Total, per capita, decile, quintile</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <h2>Code Reference</h2>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th class="align-left">Variable</th><th class="align-left">Code</th><th class="align-left">Meaning</th></tr></thead>
+            <tbody>
+                <tr><td class="align-left">Province</td><td class="align-left">1&ndash;9</td><td class="align-left">WC, EC, NC, FS, KZN, NW, GP, MP, LP</td></tr>
+                <tr><td class="align-left">Settlement Type</td><td class="align-left">1&ndash;3</td><td class="align-left">Urban formal, Urban informal, Rural formal</td></tr>
+                <tr><td class="align-left">Sex</td><td class="align-left">1=Male, 2=Female</td><td class="align-left">&nbsp;</td></tr>
+                <tr><td class="align-left">Population Group</td><td class="align-left">1=Black African, 2=Coloured</td><td class="align-left">3=Indian/Asian, 4=White</td></tr>
+                <tr><td class="align-left">Medical Aid (eoh_meds)</td><td class="align-left">1=Yes, 2=No</td><td class="align-left">3=Don't know, 9=Unspecified</td></tr>
+                <tr><td class="align-left">Yes/No fields</td><td class="align-left">1=Yes, 2=No</td><td class="align-left">8=N/A, 88=N/A, 9=Unspecified</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="footer">
+    Source: Statistics South Africa, Income and Expenditure Survey 2022/23 (Report P0100)
+</div>
+
+</body>
+</html>
