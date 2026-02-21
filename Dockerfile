@@ -23,7 +23,6 @@ RUN uv sync --frozen --no-dev --no-install-project
 
 COPY webapp/app.py webapp/main.py ./
 COPY webapp/templates/ templates/
-COPY webapp/static/ static/
 
 COPY --from=builder /build/ies2023.db ./
 
