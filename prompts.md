@@ -1,6 +1,6 @@
-# Data Analysis
+# Prompt 1
 
-This folder contains a zip file with multiple CSVs. They need to be extracted and imported into a SQLite database. The table names should "geography", "households" etc.
+This folder contains a zip file with multiple CSVs. They need to be extracted and imported into a SQLite database. The table names should "geography", "households" etc. Create a python import script.
 
 Create a COICOP lookup from the international standard for human descriptions of codes.
 
@@ -16,7 +16,17 @@ Design an interface that would allow someone that does not have a masters degree
 where you show how to do this with some example queries and charts.
 Use bootstrap v5 for styling.
 
-Add gunicorn to the webapp and create a Dockerfile. Then init a git repo, and add a gitlab ci file that builds the Docker image. The SQlite file should be baked into the docker image. Add the zip and pdf into the repo, and then inside the Dockerfile, build the database by extracting the zip and running the data import script.
+Add gunicorn to the webapp and create a Dockerfile. Then init a git repo, and add a GitHub CI file that builds the Docker image. The SQlite file should be baked into the docker image. Add the zip and pdf into the repo, and then inside the Dockerfile, build the database by extracting the zip and running the data import script.
 
+# Prompt 2
 
+Do a deep analysis on the following subject.
+
+Compare whether medical scheme members have statistically bigger co-payments for healthcare than non-scheme members, using a nearest neighbour statistical approach. Do a national and provincial analysis.
+
+Be very thorough - the output should good enough for publishing in an academic journal. Place the output in report.md, then also typset it using Typst. place that in report.typ. Use the typst CLI to create a PDF.
+
+# Prompt 3
+
+Create a readme.md with an overview of the project.
 
