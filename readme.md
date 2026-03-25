@@ -6,7 +6,7 @@ A web application for exploring South Africa's Income and Expenditure Survey (IE
 
 This project imports IES microdata into SQLite databases and provides a Flask-based web interface for querying and visualising the data. It includes pre-built example queries covering income inequality, household spending, asset ownership, and health expenditure. A toggle in the header lets you switch between survey years.
 
-A separate statistical analysis uses nearest-neighbour matching to estimate the causal effect of medical scheme membership on out-of-pocket healthcare spending (2022/23 data).
+A separate statistical analysis uses nearest-neighbour matching to estimate the causal effect of medical scheme membership on out-of-pocket healthcare spending across both survey periods, and computes the revised SDG Indicator 3.8.2 (WHO, 2025).
 
 ## Project Structure
 
@@ -21,14 +21,20 @@ A separate statistical analysis uses nearest-neighbour matching to estimate the 
 ├── Dockerfile               # Multi-stage build (both DBs + webapp)
 ├── data.md / data.html      # Database structure & data overview
 ├── findings.md / findings.html  # Exploratory analysis findings
-├── report.md / report.typ / report.pdf  # NNM analysis paper
+├── report.md / report.typ / report.pdf  # NNM analysis paper (single-period)
+├── report_2011_2023.typ / .pdf          # Dual-period NNM + SDG 3.8.2 report
 ├── study.md                 # Analysis brief
+├── query/                   # Research materials (lit review, conceptual framework, SDG metadata)
+├── analysis/
+│   ├── analysis_dual.py     # Dual-period NNM matching analysis
+│   ├── analysis_sdg382.py   # SDG 3.8.2 and OOP distribution analysis
+│   ├── pyproject.toml       # Python dependencies (numpy, scipy)
+│   └── uv.lock
 └── webapp/
     ├── app.py               # Flask application (multi-dataset)
     ├── main.py              # Dev entry point
     ├── templates/
     │   └── index.html       # Single-page UI (Bootstrap + Vega-Lite)
-    ├── analysis.py          # Nearest-neighbour matching analysis
     ├── pyproject.toml       # Python dependencies (managed by uv)
     └── uv.lock
 ```
@@ -110,7 +116,12 @@ GitHub Actions (`.github/workflows/docker.yml`) builds and pushes the Docker ima
 
 ## Analysis
 
-`webapp/analysis.py` implements a nearest-neighbour matching estimator (Mahalanobis distance) to compare out-of-pocket healthcare spending between medical scheme members and non-members, controlling for income, household size, age, sex, and settlement type. Results are in `report.pdf`.
+The `analysis/` folder contains two scripts (run with `uv run` from inside the folder):
+
+- **`analysis_dual.py`** — Dual-period nearest-neighbour matching (Mahalanobis distance) comparing OOP health expenditure between medical scheme members and non-members for both IES 2010/11 and IES 2022/23. National and provincial estimates with bootstrap CIs and sensitivity analyses.
+- **`analysis_sdg382.py`** — Computes the revised SDG Indicator 3.8.2 (WHO 2025, 40% of discretionary budget) under four poverty line variants (WHO SPL, Stats SA FPL/LBPL/UBPL), disaggregated by scheme membership. Also characterises the OOP distribution among uninsured households.
+
+Results are in `report_2011_2023.pdf`.
 
 ## Data Source
 
