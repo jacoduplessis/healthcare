@@ -23,8 +23,8 @@ import sys
 import numpy as np
 from scipy import stats as spstats
 
-DB_2023 = "ies2023.db"
-DB_2011 = "ies2011.db"
+DB_2023 = "../ies2023.db"
+DB_2011 = "../ies2011.db"
 
 # ---------------------------------------------------------------------------
 # PPP and CPI conversion parameters

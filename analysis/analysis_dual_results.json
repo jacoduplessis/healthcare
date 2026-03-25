@@ -1,0 +1,1891 @@
+{
+  "ies_2011": {
+    "year": "IES 2010/11",
+    "national": {
+      "n_treated_total": 4096,
+      "n_control_total": 17706,
+      "n_matched": 2704,
+      "match_rate": 66.0,
+      "mean_treated_unmatched": 2915.5,
+      "mean_control_unmatched": 809.33,
+      "naive_diff": 2106.17,
+      "p_value_mannwhitney": 2.214223747146823e-198,
+      "mean_treated_matched": 2204.34,
+      "mean_control_matched": 2245.21,
+      "att": -40.87,
+      "se": 257.17,
+      "ci_lower": -544.92,
+      "ci_upper": 463.17,
+      "t_stat": -0.1589,
+      "p_value_paired_t": 0.8737360564755381,
+      "p_value_wilcoxon": 0.01582102811382551,
+      "median_treated_matched": 620.0,
+      "median_control_matched": 717.0,
+      "median_diff": -97.0,
+      "pct_treated_any_spend": 85.7,
+      "pct_control_any_spend": 95.1,
+      "cohens_d": -0.0031,
+      "balance": [
+        {
+          "covariate": "log_expenditure",
+          "smd_before": 1.8304,
+          "smd_after": 0.1787,
+          "reduction_pct": 90.2
+        },
+        {
+          "covariate": "log_income",
+          "smd_before": 1.3221,
+          "smd_after": 0.0975,
+          "reduction_pct": 92.6
+        },
+        {
+          "covariate": "hsize",
+          "smd_before": -0.2408,
+          "smd_after": -0.0195,
+          "reduction_pct": 91.9
+        },
+        {
+          "covariate": "head_age",
+          "smd_before": -0.0567,
+          "smd_after": 0.0253,
+          "reduction_pct": 55.4
+        },
+        {
+          "covariate": "head_sex",
+          "smd_before": -0.3197,
+          "smd_after": 0.0023,
+          "reduction_pct": 99.3
+        },
+        {
+          "covariate": "head_population",
+          "smd_before": 0.8703,
+          "smd_after": 0.0028,
+          "reduction_pct": 99.7
+        },
+        {
+          "covariate": "education_group",
+          "smd_before": 0.6547,
+          "smd_after": 0.0381,
+          "reduction_pct": 94.2
+        },
+        {
+          "covariate": "settlement_type",
+          "smd_before": -0.7176,
+          "smd_after": 0.0022,
+          "reduction_pct": 99.7
+        }
+      ],
+      "boot_att": 46.93,
+      "boot_ci_lower": -528.14,
+      "boot_ci_upper": 487.41
+    },
+    "provincial": {
+      "Western Cape": {
+        "n_treated_total": 807,
+        "n_control_total": 1979,
+        "n_matched": 531,
+        "match_rate": 65.8,
+        "mean_treated_unmatched": 4255.57,
+        "mean_control_unmatched": 1663.12,
+        "naive_diff": 2592.46,
+        "p_value_mannwhitney": 2.43414802378426e-38,
+        "mean_treated_matched": 3754.98,
+        "mean_control_matched": 4149.64,
+        "att": -394.67,
+        "se": 1408.61,
+        "ci_lower": -3155.53,
+        "ci_upper": 2366.2,
+        "t_stat": -0.2802,
+        "p_value_paired_t": 0.7794468280038821,
+        "p_value_wilcoxon": 0.551163471760206,
+        "median_treated_matched": 1015.0,
+        "median_control_matched": 1220.0,
+        "median_diff": -205.0,
+        "pct_treated_any_spend": 88.3,
+        "pct_control_any_spend": 95.1,
+        "cohens_d": -0.0122,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 1.5244,
+            "smd_after": 0.2842,
+            "reduction_pct": 81.4
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 1.0241,
+            "smd_after": 0.1465,
+            "reduction_pct": 85.7
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": -0.3141,
+            "smd_after": -0.0455,
+            "reduction_pct": 85.5
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.1513,
+            "smd_after": 0.0359,
+            "reduction_pct": 76.3
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.2111,
+            "smd_after": 0.0081,
+            "reduction_pct": 96.2
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.9186,
+            "smd_after": 0.0051,
+            "reduction_pct": 99.4
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.9192,
+            "smd_after": 0.1264,
+            "reduction_pct": 86.3
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.3543,
+            "smd_after": -0.0031,
+            "reduction_pct": 99.1
+          }
+        ]
+      },
+      "Eastern Cape": {
+        "n_treated_total": 472,
+        "n_control_total": 2185,
+        "n_matched": 319,
+        "match_rate": 67.6,
+        "mean_treated_unmatched": 1530.01,
+        "mean_control_unmatched": 463.37,
+        "naive_diff": 1066.64,
+        "p_value_mannwhitney": 5.462952331755564e-21,
+        "mean_treated_matched": 1234.18,
+        "mean_control_matched": 1191.19,
+        "att": 42.98,
+        "se": 221.83,
+        "ci_lower": -391.81,
+        "ci_upper": 477.77,
+        "t_stat": 0.1938,
+        "p_value_paired_t": 0.8464895593376789,
+        "p_value_wilcoxon": 0.9637787381835876,
+        "median_treated_matched": 364.0,
+        "median_control_matched": 378.0,
+        "median_diff": -14.0,
+        "pct_treated_any_spend": 79.6,
+        "pct_control_any_spend": 89.7,
+        "cohens_d": 0.0108,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 1.9069,
+            "smd_after": 0.3692,
+            "reduction_pct": 80.6
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 1.4379,
+            "smd_after": 0.1751,
+            "reduction_pct": 87.8
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": -0.3143,
+            "smd_after": -0.0249,
+            "reduction_pct": 92.1
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": -0.1721,
+            "smd_after": 0.0679,
+            "reduction_pct": 60.5
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.4767,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.9686,
+            "smd_after": 0.0377,
+            "reduction_pct": 96.1
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.8071,
+            "smd_after": 0.148,
+            "reduction_pct": 81.7
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -1.0809,
+            "smd_after": -0.0127,
+            "reduction_pct": 98.8
+          }
+        ]
+      },
+      "Northern Cape": {
+        "n_treated_total": 260,
+        "n_control_total": 828,
+        "n_matched": 193,
+        "match_rate": 74.2,
+        "mean_treated_unmatched": 1960.98,
+        "mean_control_unmatched": 489.73,
+        "naive_diff": 1471.25,
+        "p_value_mannwhitney": 5.415483231168283e-13,
+        "mean_treated_matched": 1619.4,
+        "mean_control_matched": 1209.02,
+        "att": 410.38,
+        "se": 529.53,
+        "ci_lower": -627.5,
+        "ci_upper": 1448.27,
+        "t_stat": 0.775,
+        "p_value_paired_t": 0.43929864308544764,
+        "p_value_wilcoxon": 0.6342038570388264,
+        "median_treated_matched": 353.0,
+        "median_control_matched": 308.0,
+        "median_diff": 45.0,
+        "pct_treated_any_spend": 85.0,
+        "pct_control_any_spend": 95.3,
+        "cohens_d": 0.0558,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 1.8739,
+            "smd_after": 0.6203,
+            "reduction_pct": 66.9
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 1.522,
+            "smd_after": 0.4107,
+            "reduction_pct": 73.0
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": -0.033,
+            "smd_after": -0.0096,
+            "reduction_pct": 70.8
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": -0.225,
+            "smd_after": -0.0564,
+            "reduction_pct": 74.9
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.2624,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.5375,
+            "smd_after": -0.0235,
+            "reduction_pct": 95.6
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.5377,
+            "smd_after": 0.125,
+            "reduction_pct": 76.8
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.335,
+            "smd_after": -0.0061,
+            "reduction_pct": 98.2
+          }
+        ]
+      },
+      "Free State": {
+        "n_treated_total": 371,
+        "n_control_total": 1671,
+        "n_matched": 247,
+        "match_rate": 66.6,
+        "mean_treated_unmatched": 1953.08,
+        "mean_control_unmatched": 1113.99,
+        "naive_diff": 839.09,
+        "p_value_mannwhitney": 4.33247472483842e-09,
+        "mean_treated_matched": 1993.64,
+        "mean_control_matched": 2308.8,
+        "att": -315.16,
+        "se": 588.31,
+        "ci_lower": -1468.24,
+        "ci_upper": 837.92,
+        "t_stat": -0.5357,
+        "p_value_paired_t": 0.592643245396064,
+        "p_value_wilcoxon": 0.8794096690824619,
+        "median_treated_matched": 935.0,
+        "median_control_matched": 958.0,
+        "median_diff": -23.0,
+        "pct_treated_any_spend": 93.9,
+        "pct_control_any_spend": 99.6,
+        "cohens_d": -0.0341,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 1.966,
+            "smd_after": 0.399,
+            "reduction_pct": 79.7
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 1.6361,
+            "smd_after": 0.3524,
+            "reduction_pct": 78.5
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": -0.1672,
+            "smd_after": -0.0467,
+            "reduction_pct": 72.1
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": -0.0345,
+            "smd_after": 0.0265,
+            "reduction_pct": 23.1
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.3571,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.736,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.7702,
+            "smd_after": 0.1431,
+            "reduction_pct": 81.4
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.3774,
+            "smd_after": 0.0106,
+            "reduction_pct": 97.2
+          }
+        ]
+      },
+      "KwaZulu-Natal": {
+        "n_treated_total": 460,
+        "n_control_total": 2779,
+        "n_matched": 359,
+        "match_rate": 78.0,
+        "mean_treated_unmatched": 2541.86,
+        "mean_control_unmatched": 770.16,
+        "naive_diff": 1771.7,
+        "p_value_mannwhitney": 1.010506257875319e-27,
+        "mean_treated_matched": 2232.37,
+        "mean_control_matched": 1949.87,
+        "att": 282.5,
+        "se": 292.59,
+        "ci_lower": -290.99,
+        "ci_upper": 855.98,
+        "t_stat": 0.9655,
+        "p_value_paired_t": 0.33495284258860647,
+        "p_value_wilcoxon": 0.06534082754250302,
+        "median_treated_matched": 744.0,
+        "median_control_matched": 706.0,
+        "median_diff": 38.0,
+        "pct_treated_any_spend": 87.5,
+        "pct_control_any_spend": 95.3,
+        "cohens_d": 0.051,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 1.9603,
+            "smd_after": 0.439,
+            "reduction_pct": 77.6
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 1.3676,
+            "smd_after": 0.2175,
+            "reduction_pct": 84.1
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": -0.2773,
+            "smd_after": -0.0556,
+            "reduction_pct": 79.9
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": -0.0277,
+            "smd_after": 0.114,
+            "reduction_pct": -311.2
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.3719,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.9093,
+            "smd_after": 0.0422,
+            "reduction_pct": 95.4
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.6232,
+            "smd_after": 0.1445,
+            "reduction_pct": 76.8
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.9309,
+            "smd_after": 0.0261,
+            "reduction_pct": 97.2
+          }
+        ]
+      },
+      "North West": {
+        "n_treated_total": 357,
+        "n_control_total": 1862,
+        "n_matched": 292,
+        "match_rate": 81.8,
+        "mean_treated_unmatched": 1986.3,
+        "mean_control_unmatched": 488.79,
+        "naive_diff": 1497.51,
+        "p_value_mannwhitney": 1.0147324888752527e-15,
+        "mean_treated_matched": 1872.51,
+        "mean_control_matched": 1192.32,
+        "att": 680.19,
+        "se": 354.37,
+        "ci_lower": -14.37,
+        "ci_upper": 1374.75,
+        "t_stat": 1.9194,
+        "p_value_paired_t": 0.05590636629038521,
+        "p_value_wilcoxon": 0.40388350538008,
+        "median_treated_matched": 463.0,
+        "median_control_matched": 438.0,
+        "median_diff": 25.0,
+        "pct_treated_any_spend": 79.5,
+        "pct_control_any_spend": 88.7,
+        "cohens_d": 0.1123,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 1.7471,
+            "smd_after": 0.3578,
+            "reduction_pct": 79.5
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 1.1931,
+            "smd_after": 0.1941,
+            "reduction_pct": 83.7
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": -0.1627,
+            "smd_after": -0.0142,
+            "reduction_pct": 91.3
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": -0.1729,
+            "smd_after": 0.0042,
+            "reduction_pct": 97.6
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.1651,
+            "smd_after": 0.0357,
+            "reduction_pct": 78.4
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.5186,
+            "smd_after": 0.025,
+            "reduction_pct": 95.2
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.5014,
+            "smd_after": 0.0912,
+            "reduction_pct": 81.8
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.5522,
+            "smd_after": -0.0273,
+            "reduction_pct": 95.1
+          }
+        ]
+      },
+      "Gauteng": {
+        "n_treated_total": 798,
+        "n_control_total": 2545,
+        "n_matched": 521,
+        "match_rate": 65.3,
+        "mean_treated_unmatched": 4287.66,
+        "mean_control_unmatched": 909.21,
+        "naive_diff": 3378.45,
+        "p_value_mannwhitney": 1.1644191520522746e-55,
+        "mean_treated_matched": 3352.81,
+        "mean_control_matched": 2003.63,
+        "att": 1349.18,
+        "se": 370.32,
+        "ci_lower": 623.36,
+        "ci_upper": 2075.0,
+        "t_stat": 3.6433,
+        "p_value_paired_t": 0.0002961578808198088,
+        "p_value_wilcoxon": 0.00025292284365308916,
+        "median_treated_matched": 917.0,
+        "median_control_matched": 654.0,
+        "median_diff": 263.0,
+        "pct_treated_any_spend": 90.2,
+        "pct_control_any_spend": 98.7,
+        "cohens_d": 0.1596,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 1.8153,
+            "smd_after": 0.3399,
+            "reduction_pct": 81.3
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 1.1293,
+            "smd_after": 0.1819,
+            "reduction_pct": 83.9
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": -0.0478,
+            "smd_after": -0.0533,
+            "reduction_pct": -11.5
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.2006,
+            "smd_after": 0.086,
+            "reduction_pct": 57.1
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.0984,
+            "smd_after": 0.0123,
+            "reduction_pct": 87.5
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 1.0003,
+            "smd_after": 0.0549,
+            "reduction_pct": 94.5
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.8326,
+            "smd_after": 0.0844,
+            "reduction_pct": 89.9
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.3127,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          }
+        ]
+      },
+      "Mpumalanga": {
+        "n_treated_total": 305,
+        "n_control_total": 1715,
+        "n_matched": 242,
+        "match_rate": 79.3,
+        "mean_treated_unmatched": 3119.17,
+        "mean_control_unmatched": 854.1,
+        "naive_diff": 2265.07,
+        "p_value_mannwhitney": 1.8765096945752495e-15,
+        "mean_treated_matched": 2072.48,
+        "mean_control_matched": 1477.49,
+        "att": 594.99,
+        "se": 292.27,
+        "ci_lower": 22.15,
+        "ci_upper": 1167.84,
+        "t_stat": 2.0358,
+        "p_value_paired_t": 0.042866514853587216,
+        "p_value_wilcoxon": 0.6834643404214158,
+        "median_treated_matched": 833.5,
+        "median_control_matched": 797.0,
+        "median_diff": 36.5,
+        "pct_treated_any_spend": 89.7,
+        "pct_control_any_spend": 97.5,
+        "cohens_d": 0.1309,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 1.814,
+            "smd_after": 0.4126,
+            "reduction_pct": 77.3
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 1.3653,
+            "smd_after": 0.2052,
+            "reduction_pct": 85.0
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": -0.2572,
+            "smd_after": -0.0568,
+            "reduction_pct": 77.9
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": -0.1532,
+            "smd_after": 0.0425,
+            "reduction_pct": 72.2
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.4476,
+            "smd_after": 0.0089,
+            "reduction_pct": 98.0
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.7343,
+            "smd_after": 0.0471,
+            "reduction_pct": 93.6
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.3495,
+            "smd_after": 0.1662,
+            "reduction_pct": 52.4
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.7334,
+            "smd_after": 0.0167,
+            "reduction_pct": 97.7
+          }
+        ]
+      },
+      "Limpopo": {
+        "n_treated_total": 266,
+        "n_control_total": 2142,
+        "n_matched": 233,
+        "match_rate": 87.6,
+        "mean_treated_unmatched": 1126.88,
+        "mean_control_unmatched": 434.2,
+        "naive_diff": 692.69,
+        "p_value_mannwhitney": 0.0006777801458087807,
+        "mean_treated_matched": 1112.26,
+        "mean_control_matched": 1025.76,
+        "att": 86.5,
+        "se": 214.42,
+        "ci_lower": -333.77,
+        "ci_upper": 506.77,
+        "t_stat": 0.4034,
+        "p_value_paired_t": 0.6870130018274461,
+        "p_value_wilcoxon": 0.10117775417993397,
+        "median_treated_matched": 266.0,
+        "median_control_matched": 423.0,
+        "median_diff": -157.0,
+        "pct_treated_any_spend": 68.2,
+        "pct_control_any_spend": 88.4,
+        "cohens_d": 0.0264,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 1.8027,
+            "smd_after": 0.1803,
+            "reduction_pct": 90.0
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 1.5544,
+            "smd_after": 0.2261,
+            "reduction_pct": 85.5
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": -0.2331,
+            "smd_after": 0.0108,
+            "reduction_pct": 95.4
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": -0.2302,
+            "smd_after": 0.0546,
+            "reduction_pct": 76.3
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.3397,
+            "smd_after": -0.0174,
+            "reduction_pct": 94.9
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.4367,
+            "smd_after": 0.0045,
+            "reduction_pct": 99.0
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.5089,
+            "smd_after": 0.0497,
+            "reduction_pct": 90.2
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.8639,
+            "smd_after": 0.0057,
+            "reduction_pct": 99.3
+          }
+        ]
+      }
+    },
+    "sensitivity_nonzero": {
+      "n_treated_total": 3536,
+      "n_control_total": 15642,
+      "n_matched": 2392,
+      "match_rate": 67.6,
+      "mean_treated_unmatched": 3377.23,
+      "mean_control_unmatched": 916.12,
+      "naive_diff": 2461.11,
+      "p_value_mannwhitney": 0.0,
+      "mean_treated_matched": 2515.67,
+      "mean_control_matched": 2440.3,
+      "att": 75.37,
+      "se": 278.68,
+      "ci_lower": -470.85,
+      "ci_upper": 621.59,
+      "t_stat": 0.2704,
+      "p_value_paired_t": 0.7868427564781428,
+      "p_value_wilcoxon": 0.17400418281161267,
+      "median_treated_matched": 815.5,
+      "median_control_matched": 805.5,
+      "median_diff": 10.0,
+      "pct_treated_any_spend": 100.0,
+      "pct_control_any_spend": 100.0,
+      "cohens_d": 0.0055,
+      "balance": [
+        {
+          "covariate": "log_expenditure",
+          "smd_before": 1.8147,
+          "smd_after": 0.1742,
+          "reduction_pct": 90.4
+        },
+        {
+          "covariate": "log_income",
+          "smd_before": 1.2913,
+          "smd_after": 0.085,
+          "reduction_pct": 93.4
+        },
+        {
+          "covariate": "hsize",
+          "smd_before": -0.2407,
+          "smd_after": -0.0118,
+          "reduction_pct": 95.1
+        },
+        {
+          "covariate": "head_age",
+          "smd_before": -0.0165,
+          "smd_after": 0.0353,
+          "reduction_pct": -114.1
+        },
+        {
+          "covariate": "head_sex",
+          "smd_before": -0.3021,
+          "smd_after": 0.0026,
+          "reduction_pct": 99.1
+        },
+        {
+          "covariate": "head_population",
+          "smd_before": 0.8984,
+          "smd_after": 0.0038,
+          "reduction_pct": 99.6
+        },
+        {
+          "covariate": "education_group",
+          "smd_before": 0.6535,
+          "smd_after": 0.0343,
+          "reduction_pct": 94.7
+        },
+        {
+          "covariate": "settlement_type",
+          "smd_before": -0.6958,
+          "smd_after": 0.0033,
+          "reduction_pct": 99.5
+        }
+      ]
+    },
+    "sensitivity_exact_province": {
+      "pooled_att": 331.15,
+      "pooled_se": 277.13,
+      "total_matched": 2937,
+      "ci_lower": -212.03,
+      "ci_upper": 874.33
+    },
+    "descriptives": {
+      "n_total": 21802,
+      "n_treated": 4096,
+      "n_control": 17706,
+      "mean_expenditure_all": 83112.14,
+      "mean_income_all": 104296.2,
+      "mean_health_exp_all": 1205.02,
+      "mean_health_exp_treated": 2915.5,
+      "mean_health_exp_control": 809.33,
+      "median_health_exp_treated": 770.5,
+      "median_health_exp_control": 301.0,
+      "pct_any_health_treated": 86.3,
+      "pct_any_health_control": 88.3,
+      "pct_treated": 18.8,
+      "weighted_pct_treated": 21.8
+    }
+  },
+  "ies_2023": {
+    "year": "IES 2022/23",
+    "national": {
+      "n_treated_total": 7711,
+      "n_control_total": 10744,
+      "n_matched": 6625,
+      "match_rate": 85.9,
+      "mean_treated_unmatched": 2206.78,
+      "mean_control_unmatched": 527.09,
+      "naive_diff": 1679.68,
+      "p_value_mannwhitney": 0.0,
+      "mean_treated_matched": 1699.23,
+      "mean_control_matched": 730.79,
+      "att": 968.44,
+      "se": 69.93,
+      "ci_lower": 831.37,
+      "ci_upper": 1105.51,
+      "t_stat": 13.8482,
+      "p_value_paired_t": 5.1657506484795914e-43,
+      "p_value_wilcoxon": 7.087877924493621e-226,
+      "median_treated_matched": 457.62,
+      "median_control_matched": 0.0,
+      "median_diff": 457.62,
+      "pct_treated_any_spend": 80.2,
+      "pct_control_any_spend": 46.6,
+      "cohens_d": 0.1701,
+      "balance": [
+        {
+          "covariate": "log_expenditure",
+          "smd_before": 0.6132,
+          "smd_after": 0.0903,
+          "reduction_pct": 85.3
+        },
+        {
+          "covariate": "log_income",
+          "smd_before": 0.4571,
+          "smd_after": 0.0241,
+          "reduction_pct": 94.7
+        },
+        {
+          "covariate": "hsize",
+          "smd_before": 0.1766,
+          "smd_after": 0.0278,
+          "reduction_pct": 84.3
+        },
+        {
+          "covariate": "head_age",
+          "smd_before": 0.1641,
+          "smd_after": 0.0094,
+          "reduction_pct": 94.3
+        },
+        {
+          "covariate": "head_sex",
+          "smd_before": 0.0629,
+          "smd_after": 0.0015,
+          "reduction_pct": 97.6
+        },
+        {
+          "covariate": "head_population",
+          "smd_before": 0.2103,
+          "smd_after": 0.0066,
+          "reduction_pct": 96.9
+        },
+        {
+          "covariate": "education_group",
+          "smd_before": 0.2369,
+          "smd_after": 0.0044,
+          "reduction_pct": 98.2
+        },
+        {
+          "covariate": "settlement_type",
+          "smd_before": -0.0593,
+          "smd_after": 0.0022,
+          "reduction_pct": 96.3
+        }
+      ],
+      "boot_att": 951.23,
+      "boot_ci_lower": 815.46,
+      "boot_ci_upper": 1093.42
+    },
+    "provincial": {
+      "Western Cape": {
+        "n_treated_total": 825,
+        "n_control_total": 944,
+        "n_matched": 648,
+        "match_rate": 78.5,
+        "mean_treated_unmatched": 4651.78,
+        "mean_control_unmatched": 796.92,
+        "naive_diff": 3854.86,
+        "p_value_mannwhitney": 4.881373125044077e-74,
+        "mean_treated_matched": 2681.07,
+        "mean_control_matched": 1092.3,
+        "att": 1588.77,
+        "se": 280.01,
+        "ci_lower": 1039.94,
+        "ci_upper": 2137.59,
+        "t_stat": 5.6739,
+        "p_value_paired_t": 2.106486470080965e-08,
+        "p_value_wilcoxon": 1.684894706541625e-27,
+        "median_treated_matched": 502.37,
+        "median_control_matched": 0.0,
+        "median_diff": 502.37,
+        "pct_treated_any_spend": 76.7,
+        "pct_control_any_spend": 42.9,
+        "cohens_d": 0.2229,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 0.7254,
+            "smd_after": 0.1811,
+            "reduction_pct": 75.0
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 0.6044,
+            "smd_after": 0.0964,
+            "reduction_pct": 84.0
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": 0.0932,
+            "smd_after": 0.0257,
+            "reduction_pct": 72.4
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.2211,
+            "smd_after": 0.036,
+            "reduction_pct": 83.7
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": -0.049,
+            "smd_after": 0.0031,
+            "reduction_pct": 93.7
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.378,
+            "smd_after": 0.0218,
+            "reduction_pct": 94.2
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.4082,
+            "smd_after": 0.0387,
+            "reduction_pct": 90.5
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.1065,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          }
+        ]
+      },
+      "Eastern Cape": {
+        "n_treated_total": 1089,
+        "n_control_total": 1449,
+        "n_matched": 924,
+        "match_rate": 84.8,
+        "mean_treated_unmatched": 1727.8,
+        "mean_control_unmatched": 413.0,
+        "naive_diff": 1314.8,
+        "p_value_mannwhitney": 2.4474157353811992e-93,
+        "mean_treated_matched": 1569.57,
+        "mean_control_matched": 523.08,
+        "att": 1046.49,
+        "se": 114.61,
+        "ci_lower": 821.85,
+        "ci_upper": 1271.13,
+        "t_stat": 9.1306,
+        "p_value_paired_t": 4.201098525479898e-19,
+        "p_value_wilcoxon": 6.694627117728013e-38,
+        "median_treated_matched": 456.74,
+        "median_control_matched": 0.0,
+        "median_diff": 456.74,
+        "pct_treated_any_spend": 73.3,
+        "pct_control_any_spend": 40.7,
+        "cohens_d": 0.3004,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 0.5931,
+            "smd_after": 0.1617,
+            "reduction_pct": 72.7
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 0.3767,
+            "smd_after": 0.0543,
+            "reduction_pct": 85.6
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": 0.251,
+            "smd_after": 0.0601,
+            "reduction_pct": 76.0
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.1551,
+            "smd_after": 0.0129,
+            "reduction_pct": 91.7
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": 0.1417,
+            "smd_after": 0.0109,
+            "reduction_pct": 92.3
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.0329,
+            "smd_after": 0.0033,
+            "reduction_pct": 89.9
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.1518,
+            "smd_after": 0.0213,
+            "reduction_pct": 86.0
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": 0.1668,
+            "smd_after": 0.0269,
+            "reduction_pct": 83.8
+          }
+        ]
+      },
+      "Northern Cape": {
+        "n_treated_total": 260,
+        "n_control_total": 538,
+        "n_matched": 256,
+        "match_rate": 98.5,
+        "mean_treated_unmatched": 1653.72,
+        "mean_control_unmatched": 366.12,
+        "naive_diff": 1287.59,
+        "p_value_mannwhitney": 1.8486504177237637e-37,
+        "mean_treated_matched": 1554.0,
+        "mean_control_matched": 640.4,
+        "att": 913.61,
+        "se": 314.91,
+        "ci_lower": 296.37,
+        "ci_upper": 1530.84,
+        "t_stat": 2.9011,
+        "p_value_paired_t": 0.004042966955903642,
+        "p_value_wilcoxon": 6.750476821691504e-10,
+        "median_treated_matched": 323.33,
+        "median_control_matched": 0.0,
+        "median_diff": 323.33,
+        "pct_treated_any_spend": 74.6,
+        "pct_control_any_spend": 35.9,
+        "cohens_d": 0.1813,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 0.6468,
+            "smd_after": 0.1861,
+            "reduction_pct": 71.2
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 0.4921,
+            "smd_after": 0.0892,
+            "reduction_pct": 81.9
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": 0.1043,
+            "smd_after": 0.0356,
+            "reduction_pct": 65.8
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.0991,
+            "smd_after": -0.0225,
+            "reduction_pct": 77.3
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": 0.0268,
+            "smd_after": 0.0236,
+            "reduction_pct": 12.0
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.1045,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.2979,
+            "smd_after": 0.0725,
+            "reduction_pct": 75.7
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": 0.0453,
+            "smd_after": 0.0727,
+            "reduction_pct": -60.5
+          }
+        ]
+      },
+      "Free State": {
+        "n_treated_total": 592,
+        "n_control_total": 719,
+        "n_matched": 504,
+        "match_rate": 85.1,
+        "mean_treated_unmatched": 1978.74,
+        "mean_control_unmatched": 605.6,
+        "naive_diff": 1373.15,
+        "p_value_mannwhitney": 6.782619296943592e-24,
+        "mean_treated_matched": 1471.95,
+        "mean_control_matched": 724.01,
+        "att": 747.94,
+        "se": 267.15,
+        "ci_lower": 224.33,
+        "ci_upper": 1271.55,
+        "t_stat": 2.7997,
+        "p_value_paired_t": 0.005311418754826327,
+        "p_value_wilcoxon": 2.8634487436118104e-09,
+        "median_treated_matched": 364.29,
+        "median_control_matched": 150.67,
+        "median_diff": 213.63,
+        "pct_treated_any_spend": 78.8,
+        "pct_control_any_spend": 61.9,
+        "cohens_d": 0.1247,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 0.548,
+            "smd_after": 0.1983,
+            "reduction_pct": 63.8
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 0.362,
+            "smd_after": 0.0636,
+            "reduction_pct": 82.4
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": 0.2145,
+            "smd_after": 0.0951,
+            "reduction_pct": 55.7
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.1346,
+            "smd_after": 0.0579,
+            "reduction_pct": 57.0
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": 0.1229,
+            "smd_after": -0.0079,
+            "reduction_pct": 93.5
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.2002,
+            "smd_after": 0.0849,
+            "reduction_pct": 57.6
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.1812,
+            "smd_after": 0.0147,
+            "reduction_pct": 91.9
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.1519,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          }
+        ]
+      },
+      "KwaZulu-Natal": {
+        "n_treated_total": 1318,
+        "n_control_total": 1605,
+        "n_matched": 1106,
+        "match_rate": 83.9,
+        "mean_treated_unmatched": 2071.23,
+        "mean_control_unmatched": 450.66,
+        "naive_diff": 1620.57,
+        "p_value_mannwhitney": 4.412896749940038e-123,
+        "mean_treated_matched": 1663.06,
+        "mean_control_matched": 530.25,
+        "att": 1132.81,
+        "se": 140.53,
+        "ci_lower": 857.36,
+        "ci_upper": 1408.25,
+        "t_stat": 8.0607,
+        "p_value_paired_t": 1.9562198365053652e-15,
+        "p_value_wilcoxon": 1.4234954171805472e-51,
+        "median_treated_matched": 527.22,
+        "median_control_matched": 0.0,
+        "median_diff": 527.22,
+        "pct_treated_any_spend": 82.7,
+        "pct_control_any_spend": 47.2,
+        "cohens_d": 0.2424,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 0.5865,
+            "smd_after": 0.1559,
+            "reduction_pct": 73.4
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 0.4162,
+            "smd_after": 0.0614,
+            "reduction_pct": 85.2
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": 0.1295,
+            "smd_after": 0.0368,
+            "reduction_pct": 71.6
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.1954,
+            "smd_after": 0.0466,
+            "reduction_pct": 76.1
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": 0.0279,
+            "smd_after": -0.0036,
+            "reduction_pct": 87.0
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.251,
+            "smd_after": 0.0302,
+            "reduction_pct": 88.0
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.2259,
+            "smd_after": 0.0304,
+            "reduction_pct": 86.5
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.1272,
+            "smd_after": 0.0092,
+            "reduction_pct": 92.8
+          }
+        ]
+      },
+      "North West": {
+        "n_treated_total": 403,
+        "n_control_total": 867,
+        "n_matched": 389,
+        "match_rate": 96.5,
+        "mean_treated_unmatched": 1142.18,
+        "mean_control_unmatched": 321.13,
+        "naive_diff": 821.05,
+        "p_value_mannwhitney": 1.3926415001548857e-48,
+        "mean_treated_matched": 905.2,
+        "mean_control_matched": 503.03,
+        "att": 402.17,
+        "se": 155.97,
+        "ci_lower": 96.47,
+        "ci_upper": 707.87,
+        "t_stat": 2.5785,
+        "p_value_paired_t": 0.010290421385143864,
+        "p_value_wilcoxon": 6.617417142289174e-13,
+        "median_treated_matched": 300.0,
+        "median_control_matched": 0.0,
+        "median_diff": 300.0,
+        "pct_treated_any_spend": 81.0,
+        "pct_control_any_spend": 42.9,
+        "cohens_d": 0.1307,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 0.549,
+            "smd_after": 0.1026,
+            "reduction_pct": 81.3
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 0.4253,
+            "smd_after": 0.0681,
+            "reduction_pct": 84.0
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": 0.2096,
+            "smd_after": 0.0798,
+            "reduction_pct": 61.9
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.1247,
+            "smd_after": 0.0146,
+            "reduction_pct": 88.3
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": 0.0534,
+            "smd_after": -0.0103,
+            "reduction_pct": 80.7
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.2067,
+            "smd_after": 0.0227,
+            "reduction_pct": 89.0
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.3218,
+            "smd_after": 0.0236,
+            "reduction_pct": 92.7
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.1916,
+            "smd_after": -0.0355,
+            "reduction_pct": 81.5
+          }
+        ]
+      },
+      "Gauteng": {
+        "n_treated_total": 1813,
+        "n_control_total": 2600,
+        "n_matched": 1564,
+        "match_rate": 86.3,
+        "mean_treated_unmatched": 2383.58,
+        "mean_control_unmatched": 715.9,
+        "naive_diff": 1667.68,
+        "p_value_mannwhitney": 1.517675225707529e-150,
+        "mean_treated_matched": 1846.19,
+        "mean_control_matched": 1039.59,
+        "att": 806.6,
+        "se": 187.97,
+        "ci_lower": 438.18,
+        "ci_upper": 1175.02,
+        "t_stat": 4.2911,
+        "p_value_paired_t": 1.8867833783269092e-05,
+        "p_value_wilcoxon": 1.508223718617836e-38,
+        "median_treated_matched": 410.1,
+        "median_control_matched": 0.0,
+        "median_diff": 410.1,
+        "pct_treated_any_spend": 79.2,
+        "pct_control_any_spend": 47.6,
+        "cohens_d": 0.1085,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 0.6239,
+            "smd_after": 0.0985,
+            "reduction_pct": 84.2
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 0.4806,
+            "smd_after": 0.0507,
+            "reduction_pct": 89.4
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": 0.1989,
+            "smd_after": 0.0376,
+            "reduction_pct": 81.1
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.1978,
+            "smd_after": 0.0183,
+            "reduction_pct": 90.8
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": 0.0201,
+            "smd_after": 0.0026,
+            "reduction_pct": 87.1
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.2695,
+            "smd_after": 0.0206,
+            "reduction_pct": 92.4
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.2495,
+            "smd_after": 0.011,
+            "reduction_pct": 95.6
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.0209,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          }
+        ]
+      },
+      "Mpumalanga": {
+        "n_treated_total": 599,
+        "n_control_total": 827,
+        "n_matched": 543,
+        "match_rate": 90.7,
+        "mean_treated_unmatched": 1495.28,
+        "mean_control_unmatched": 555.37,
+        "naive_diff": 939.92,
+        "p_value_mannwhitney": 1.56958224863602e-51,
+        "mean_treated_matched": 1389.07,
+        "mean_control_matched": 707.62,
+        "att": 681.45,
+        "se": 112.89,
+        "ci_lower": 460.19,
+        "ci_upper": 902.7,
+        "t_stat": 6.0365,
+        "p_value_paired_t": 2.923089652271863e-09,
+        "p_value_wilcoxon": 3.2883957276289204e-17,
+        "median_treated_matched": 526.78,
+        "median_control_matched": 33.29,
+        "median_diff": 493.49,
+        "pct_treated_any_spend": 86.7,
+        "pct_control_any_spend": 52.7,
+        "cohens_d": 0.2591,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 0.5281,
+            "smd_after": 0.1518,
+            "reduction_pct": 71.3
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 0.3769,
+            "smd_after": 0.0764,
+            "reduction_pct": 79.7
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": 0.1994,
+            "smd_after": 0.0494,
+            "reduction_pct": 75.2
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.029,
+            "smd_after": 0.0176,
+            "reduction_pct": 39.4
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": 0.1065,
+            "smd_after": 0.0258,
+            "reduction_pct": 75.8
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.139,
+            "smd_after": 0.0356,
+            "reduction_pct": 74.4
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.154,
+            "smd_after": -0.0329,
+            "reduction_pct": 78.6
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.1664,
+            "smd_after": -0.0033,
+            "reduction_pct": 98.0
+          }
+        ]
+      },
+      "Limpopo": {
+        "n_treated_total": 812,
+        "n_control_total": 1195,
+        "n_matched": 717,
+        "match_rate": 88.3,
+        "mean_treated_unmatched": 1586.82,
+        "mean_control_unmatched": 299.24,
+        "naive_diff": 1287.58,
+        "p_value_mannwhitney": 2.0170126760712712e-122,
+        "mean_treated_matched": 1345.97,
+        "mean_control_matched": 413.83,
+        "att": 932.14,
+        "se": 132.29,
+        "ci_lower": 672.86,
+        "ci_upper": 1191.43,
+        "t_stat": 7.0463,
+        "p_value_paired_t": 4.3251683765020216e-12,
+        "p_value_wilcoxon": 1.3554098894876696e-41,
+        "median_treated_matched": 482.13,
+        "median_control_matched": 0.0,
+        "median_diff": 482.13,
+        "pct_treated_any_spend": 85.6,
+        "pct_control_any_spend": 41.8,
+        "cohens_d": 0.2631,
+        "balance": [
+          {
+            "covariate": "log_expenditure",
+            "smd_before": 0.689,
+            "smd_after": 0.2212,
+            "reduction_pct": 67.9
+          },
+          {
+            "covariate": "log_income",
+            "smd_before": 0.5464,
+            "smd_after": 0.1326,
+            "reduction_pct": 75.7
+          },
+          {
+            "covariate": "hsize",
+            "smd_before": 0.1334,
+            "smd_after": 0.0181,
+            "reduction_pct": 86.4
+          },
+          {
+            "covariate": "head_age",
+            "smd_before": 0.1938,
+            "smd_after": 0.0392,
+            "reduction_pct": 79.8
+          },
+          {
+            "covariate": "head_sex",
+            "smd_before": 0.1087,
+            "smd_after": 0.0,
+            "reduction_pct": 100.0
+          },
+          {
+            "covariate": "head_population",
+            "smd_before": 0.072,
+            "smd_after": 0.0133,
+            "reduction_pct": 81.5
+          },
+          {
+            "covariate": "education_group",
+            "smd_before": 0.1681,
+            "smd_after": 0.0122,
+            "reduction_pct": 92.7
+          },
+          {
+            "covariate": "settlement_type",
+            "smd_before": -0.0036,
+            "smd_after": 0.0224,
+            "reduction_pct": -526.5
+          }
+        ]
+      }
+    },
+    "sensitivity_nonzero": {
+      "n_treated_total": 6218,
+      "n_control_total": 4440,
+      "n_matched": 4047,
+      "match_rate": 65.1,
+      "mean_treated_unmatched": 2736.65,
+      "mean_control_unmatched": 1275.47,
+      "naive_diff": 1461.18,
+      "p_value_mannwhitney": 5.298694771140913e-99,
+      "mean_treated_matched": 2064.57,
+      "mean_control_matched": 1344.87,
+      "att": 719.7,
+      "se": 95.13,
+      "ci_lower": 533.24,
+      "ci_upper": 906.17,
+      "t_stat": 7.5652,
+      "p_value_paired_t": 4.7670840746422145e-14,
+      "p_value_wilcoxon": 9.724793603996912e-40,
+      "median_treated_matched": 614.9,
+      "median_control_matched": 459.39,
+      "median_diff": 155.51,
+      "pct_treated_any_spend": 100.0,
+      "pct_control_any_spend": 100.0,
+      "cohens_d": 0.1189,
+      "balance": [
+        {
+          "covariate": "log_expenditure",
+          "smd_before": 0.3864,
+          "smd_after": 0.0692,
+          "reduction_pct": 82.1
+        },
+        {
+          "covariate": "log_income",
+          "smd_before": 0.2803,
+          "smd_after": 0.014,
+          "reduction_pct": 95.0
+        },
+        {
+          "covariate": "hsize",
+          "smd_before": 0.1127,
+          "smd_after": 0.0254,
+          "reduction_pct": 77.5
+        },
+        {
+          "covariate": "head_age",
+          "smd_before": 0.1323,
+          "smd_after": 0.0238,
+          "reduction_pct": 82.0
+        },
+        {
+          "covariate": "head_sex",
+          "smd_before": 0.0702,
+          "smd_after": 0.0025,
+          "reduction_pct": 96.5
+        },
+        {
+          "covariate": "head_population",
+          "smd_before": 0.1622,
+          "smd_after": 0.0171,
+          "reduction_pct": 89.5
+        },
+        {
+          "covariate": "education_group",
+          "smd_before": 0.1789,
+          "smd_after": 0.0078,
+          "reduction_pct": 95.6
+        },
+        {
+          "covariate": "settlement_type",
+          "smd_before": -0.0233,
+          "smd_after": 0.0063,
+          "reduction_pct": 73.1
+        }
+      ]
+    },
+    "sensitivity_exact_province": {
+      "pooled_att": 949.71,
+      "pooled_se": 66.53,
+      "total_matched": 6651,
+      "ci_lower": 819.32,
+      "ci_upper": 1080.11
+    },
+    "descriptives": {
+      "n_total": 18455,
+      "n_treated": 7711,
+      "n_control": 10744,
+      "mean_expenditure_all": 121333.52,
+      "mean_income_all": 166664.88,
+      "mean_health_exp_all": 1228.91,
+      "mean_health_exp_treated": 2206.78,
+      "mean_health_exp_control": 527.09,
+      "median_health_exp_treated": 504.81,
+      "median_health_exp_control": 0.0,
+      "pct_any_health_treated": 80.6,
+      "pct_any_health_control": 41.3,
+      "pct_treated": 41.8,
+      "weighted_pct_treated": 42.5
+    }
+  },
+  "comparison": {
+    "cpi_factor": 1.7271,
+    "reference_prices": {
+      "2011": "March 2011 Rand",
+      "2023": "May 2023 Rand"
+    },
+    "national_att": {
+      "att_2011_nominal": -40.87,
+      "att_2011_real_2023_prices": -70.59,
+      "att_2023": 968.44,
+      "real_change": 1039.03,
+      "real_change_pct": -1471.9,
+      "nominal_change_pct": -2469.6
+    },
+    "mean_oop": {
+      "treated_2011_nominal": 2915.5,
+      "treated_2011_real": 5035.36,
+      "treated_2023": 2206.78,
+      "treated_real_change_pct": -56.2,
+      "control_2011_nominal": 809.33,
+      "control_2011_real": 1397.79,
+      "control_2023": 527.09,
+      "control_real_change_pct": -62.3
+    },
+    "utilisation": {
+      "pct_treated_any_2011": 86.3,
+      "pct_treated_any_2023": 80.6,
+      "pct_control_any_2011": 88.3,
+      "pct_control_any_2023": 41.3
+    },
+    "coverage": {
+      "pct_treated_2011_sample": 18.8,
+      "pct_treated_2023_sample": 41.8,
+      "pct_treated_2011_weighted": 21.8,
+      "pct_treated_2023_weighted": 42.5
+    },
+    "provincial_att": {
+      "Western Cape": {
+        "att_2011_nominal": -394.67,
+        "att_2011_real": -681.63,
+        "att_2023": 1588.77,
+        "real_change": 2270.4,
+        "real_change_pct": -333.1,
+        "cohens_d_2011": -0.0122,
+        "cohens_d_2023": 0.2229
+      },
+      "Eastern Cape": {
+        "att_2011_nominal": 42.98,
+        "att_2011_real": 74.23,
+        "att_2023": 1046.49,
+        "real_change": 972.26,
+        "real_change_pct": 1309.8,
+        "cohens_d_2011": 0.0108,
+        "cohens_d_2023": 0.3004
+      },
+      "Northern Cape": {
+        "att_2011_nominal": 410.38,
+        "att_2011_real": 708.77,
+        "att_2023": 913.61,
+        "real_change": 204.84,
+        "real_change_pct": 28.9,
+        "cohens_d_2011": 0.0558,
+        "cohens_d_2023": 0.1813
+      },
+      "Free State": {
+        "att_2011_nominal": -315.16,
+        "att_2011_real": -544.31,
+        "att_2023": 747.94,
+        "real_change": 1292.25,
+        "real_change_pct": -237.4,
+        "cohens_d_2011": -0.0341,
+        "cohens_d_2023": 0.1247
+      },
+      "KwaZulu-Natal": {
+        "att_2011_nominal": 282.5,
+        "att_2011_real": 487.91,
+        "att_2023": 1132.81,
+        "real_change": 644.9,
+        "real_change_pct": 132.2,
+        "cohens_d_2011": 0.051,
+        "cohens_d_2023": 0.2424
+      },
+      "North West": {
+        "att_2011_nominal": 680.19,
+        "att_2011_real": 1174.76,
+        "att_2023": 402.17,
+        "real_change": -772.59,
+        "real_change_pct": -65.8,
+        "cohens_d_2011": 0.1123,
+        "cohens_d_2023": 0.1307
+      },
+      "Gauteng": {
+        "att_2011_nominal": 1349.18,
+        "att_2011_real": 2330.17,
+        "att_2023": 806.6,
+        "real_change": -1523.57,
+        "real_change_pct": -65.4,
+        "cohens_d_2011": 0.1596,
+        "cohens_d_2023": 0.1085
+      },
+      "Mpumalanga": {
+        "att_2011_nominal": 594.99,
+        "att_2011_real": 1027.61,
+        "att_2023": 681.45,
+        "real_change": -346.16,
+        "real_change_pct": -33.7,
+        "cohens_d_2011": 0.1309,
+        "cohens_d_2023": 0.2591
+      },
+      "Limpopo": {
+        "att_2011_nominal": 86.5,
+        "att_2011_real": 149.39,
+        "att_2023": 932.14,
+        "real_change": 782.75,
+        "real_change_pct": 524.0,
+        "cohens_d_2011": 0.0264,
+        "cohens_d_2023": 0.2631
+      }
+    },
+    "matched_comparison": {
+      "mean_treated_matched_2011_nominal": 2204.34,
+      "mean_treated_matched_2011_real": 3807.12,
+      "mean_treated_matched_2023": 1699.23,
+      "mean_control_matched_2011_nominal": 2245.21,
+      "mean_control_matched_2011_real": 3877.7,
+      "mean_control_matched_2023": 730.79
+    }
+  },
+  "health_breakdown_2011": {
+    "061": {
+      "label": "Medicines and health products",
+      "treated": 1764.05,
+      "control": 548.88
+    },
+    "062": {
+      "label": "Outpatient care services",
+      "treated": 3348.95,
+      "control": 780.72
+    },
+    "063": {
+      "label": "Inpatient care services",
+      "treated": 2475.45,
+      "control": 444.5
+    }
+  },
+  "health_breakdown_2023": {
+    "061": {
+      "label": "Medicines and health products",
+      "treated": 1577.78,
+      "control": 859.1
+    },
+    "062": {
+      "label": "Outpatient care services",
+      "treated": 2013.81,
+      "control": 1146.24
+    },
+    "063": {
+      "label": "Inpatient care services",
+      "treated": 11037.86,
+      "control": 5031.62
+    },
+    "064": {
+      "label": "Other health services",
+      "treated": 1616.66,
+      "control": 1130.76
+    }
+  },
+  "metadata": {
+    "cpi_factor": 1.7271,
+    "cpi_source": "Stats SA P0141, headline CPI (all items), Dec 2016 = 100",
+    "reference_2011": "March 2011 prices",
+    "reference_2023": "May 2023 prices",
+    "survey_2011": "IES 2010/11 (Sep 2010 - Aug 2011, n=25,328)",
+    "survey_2023": "IES 2022/23 (Nov 2022 - Nov 2023, n=19,939)",
+    "response_rate_2011": 91.6,
+    "response_rate_2023": 81.94
+  }
+}
